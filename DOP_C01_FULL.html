@@ -4096,7 +4096,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company recently launched an application that is more popular than expected. The company wants to ensure the application can scale to meet increasing demands and provide reliability using multiple <mark>Availability Zones</mark> (AZs). The application runs on a fleet of <mark>Amazon EC2</mark> instances behind an Application Load<br>Balancer (<mark>ALB</mark>). A DevOps engineer has created an <mark>Auto Scaling</mark> group across multiple AZs for the application. Instances launched in the newly added AZs are not receiving any <mark>traffic</mark> for the application.<br>What is likely causing this issue?<br>
+                                            A company recently launched an application that is more popular than expected. The company wants to ensure the application can scale to meet increasing demands and provide reliability using multiple <mark>Availability Zones</mark> (AZs). The application runs on a fleet of Amazon EC2 instances behind an Application Load<br>Balancer (ALB). A DevOps engineer has created an <mark>Auto Scaling</mark> group across multiple AZs for the application. Instances launched in the <mark>newly added AZs</mark> are not receiving any traffic for the application.<br>What is likely causing this issue?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -4172,14 +4172,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Availability Zones, Auto Scaling, Amazon EC2, traffic, ALB</p>
+<p><strong>Keywords:</strong> Auto Scaling, Availability Zones, Application Load Balancer, newly added AZs, not receiving traffic</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D dùng <mark>ALB</mark> để đáp ứng <mark>traffic</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Vì keyword <mark>Application Load Balancer</mark> và <mark>Availability Zones</mark> cho thấy ALB phải được cấu hình subnet ở từng AZ; các <mark>newly added AZs</mark> không nhận traffic vì chưa được thêm vào ALB.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này không đáp ứng keyword <mark>traffic</mark> nên không thỏa yêu cầu.</li>
-<li><strong>B:</strong> Phương án này không đáp ứng keyword <mark>traffic</mark> nên không thỏa yêu cầu.</li>
-<li><strong>C:</strong> Phương án này không đáp ứng keyword <mark>traffic</mark> nên không thỏa yêu cầu.</li>
+<li><strong>A:</strong> Auto Scaling group hỗ trợ nhiều <mark>Availability Zones</mark>, nên không phải nguyên nhân.</li>
+<li><strong>B:</strong> Target group/ALB tự đăng ký instance của Auto Scaling; không cần gán thủ công.</li>
+<li><strong>C:</strong> NLB không giải quyết vấn đề thiếu AZ trên <mark>Application Load Balancer</mark>.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 71%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="5 votes." title="">D (71%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 14%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">14%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 14%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">14%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -4203,7 +4203,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps Engineer manages a web application that runs on <mark>Amazon EC2</mark> instances behind an <mark>Application Load Balancer</mark> (<mark>ALB</mark>). The instances run in an EC2<br>Auto Scaling group across multiple <mark>Availability Zones</mark>. The engineer needs to implement a deployment strategy that:<br>✑ Launches a <mark>second fleet</mark> of instances with the same capacity as the original fleet.<br>✑ Maintains the original fleet unchanged while the <mark>second fleet</mark> is launched.<br>✑ Transitions <mark>traffic</mark> to the <mark>second fleet</mark> when the <mark>second fleet</mark> is fully deployed.<br>✑ Terminates the original fleet automatically 1 hour after <mark>transition</mark>.<br>Which solution will satisfy these requirements?<br>
+                                            A DevOps Engineer manages a web application that runs on Amazon EC2 instances behind an Application Load Balancer (<mark>ALB</mark>). The instances run in an EC2<br><mark>Auto Scaling</mark> group across multiple Availability Zones. The engineer needs to implement a deployment strategy that:<br>✑ Launches a <mark>second fleet</mark> of instances with the same capacity as the original fleet.<br>✑ Maintains the original fleet unchanged while the <mark>second fleet</mark> is launched.<br>✑ <mark>Transition</mark>s <mark>traffic</mark> to the <mark>second fleet</mark> when the <mark>second fleet</mark> is fully deployed.<br>✑ <mark>Terminate</mark>s the original fleet automatically <mark>1 hour</mark> after <mark>transition</mark>.<br>Which solution will satisfy these requirements?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -4279,14 +4279,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Application Load Balancer, Availability Zones, second fleet, Amazon EC2, transition, traffic, ALB</p>
+<p><strong>Keywords:</strong> second fleet, transition, traffic, terminate, 1 hour, Auto Scaling, ALB</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C dùng <mark>AWS CodeDeploy</mark> để đáp ứng <mark>second fleet</mark>, <mark>transition</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Keyword <mark>second fleet</mark> + <mark>transition</mark> + <mark>terminate</mark> yêu cầu blue/green có thời gian chờ; CodeDeploy blue/green cho phép chuyển <mark>traffic</mark> và tự terminate sau 1 giờ.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này không đáp ứng keyword <mark>second fleet</mark> nên không thỏa yêu cầu.</li>
-<li><strong>B:</strong> Phương án này không đáp ứng keyword <mark>second fleet</mark> nên không thỏa yêu cầu.</li>
-<li><strong>D:</strong> Phương án này không đáp ứng keyword <mark>second fleet</mark> nên không thỏa yêu cầu.</li>
+<li><strong>A:</strong> CloudFormation/Route 53 không cung cấp blue/green và timer terminate chuẩn.</li>
+<li><strong>B:</strong> Elastic Beanstalk blue/green không có cơ chế native terminate sau 1 giờ theo yêu cầu.</li>
+<li><strong>D:</strong> Immutable deploy không tạo <mark>second fleet</mark> và chuyển traffic theo yêu cầu.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 60%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">C (60%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 40%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="4 votes." title="">D (40%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -4311,7 +4311,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A healthcare services company is concerned about the growing costs of software licensing for an application for <mark>monitoring</mark> patient wellness. The company wants to create an <mark>audit</mark> process to ensure that the application is running exclusively on <mark>Amazon EC2</mark> Dedicated Hosts. A DevOps Engineer must create a workflow to <mark>audit</mark> the application to ensure <mark>compliance</mark>.<br>What steps should the Engineer take to meet this requirement with the <mark>LEAST administrative overhead</mark>?<br>
+                                            A healthcare services company is concerned about the growing costs of software licensing for an application for monitoring patient wellness. The company wants to create an <mark>audit</mark> process to ensure that the application is running exclusively on <mark>Amazon EC2 Dedicated Hosts</mark>. A DevOps Engineer must create a workflow to <mark>audit</mark> the application to ensure <mark>compliance</mark>.<br>What steps should the Engineer take to meet this requirement with the <mark>LEAST administrative overhead</mark>?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -4387,14 +4387,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> least administrative overhead, Amazon EC2, monitoring, compliance, audit</p>
+<p><strong>Keywords:</strong> audit, Amazon EC2 Dedicated Hosts, compliance, least administrative overhead</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C dùng <mark>Amazon EC2</mark>, <mark>AWS Lambda</mark> để đáp ứng <mark>least administrative overhead</mark>, <mark>monitoring</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> <mark>AWS Config</mark> có thể đánh giá <mark>compliance</mark> liên tục; custom rule kiểm tra host placement để đảm bảo <mark>Dedicated Hosts</mark> với ít vận hành nhất.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này không đáp ứng keyword <mark>least administrative overhead</mark> nên không thỏa yêu cầu.</li>
-<li><strong>B:</strong> Phương án này không đáp ứng keyword <mark>least administrative overhead</mark> nên không thỏa yêu cầu.</li>
-<li><strong>D:</strong> Phương án này không đáp ứng keyword <mark>least administrative overhead</mark> nên không thỏa yêu cầu.</li>
+<li><strong>A:</strong> Systems Manager compliance cần thu thập thủ công và quản trị nhiều hơn.</li>
+<li><strong>B:</strong> Giải pháp tự viết code/queue tăng overhead, không phải <mark>least administrative overhead</mark>.</li>
+<li><strong>D:</strong> CloudTrail không được thiết kế để đánh giá trạng thái chạy trên Dedicated Hosts.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">C (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -4420,7 +4420,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company has 100 GB of log data in an <mark>Amazon S3</mark> bucket stored in .csv format. SQL developers want to query this data and generate graphs to visualize it.<br>They also need an efficient, automated way to store metadata from the .csv file.<br>Which combination of steps should be taken to meet these requirements with the LEAST amount of effort? (Choose three.)<br>
+                                            A company has 100 GB of log data in an <mark>Amazon S3</mark> bucket stored in <mark>.csv</mark> format. SQL developers want to <mark>query</mark> this data and generate <mark>graphs</mark> to visualize it.<br>They also need an efficient, automated way to store <mark>metadata</mark> from the <mark>.csv</mark> file.<br>Which combination of steps should be taken to meet these requirements with the LEAST amount of effort? (Choose three.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -4518,14 +4518,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Amazon S3</p>
+<p><strong>Keywords:</strong> Amazon S3, .csv, query, graphs, metadata, least effort</p>
 <p><strong>Đáp án:</strong> BCE</p>
-<p><strong>Vì sao đúng:</strong> Đáp án BCE dùng cách triển khai phù hợp để đáp ứng yêu cầu chính, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Dữ liệu <mark>Amazon S3</mark> .csv cần <mark>query</mark> nhanh và hiển thị <mark>graphs</mark>: dùng <mark>Amazon Athena</mark> truy vấn, <mark>AWS Glue</mark> làm metadata, và <mark>QuickSight</mark> để trực quan hóa.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này thiên về <mark>AWS X-Ray</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>D:</strong> Phương án này thiên về <mark>Amazon Redshift</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>F:</strong> Phương án này thiên về <mark>Amazon S3</mark> nhưng không khớp với các keyword chính của đề.</li>
+<li><strong>A:</strong> X-Ray không dùng cho truy vấn dữ liệu/graph.</li>
+<li><strong>D:</strong> Redshift nặng hơn, không phải <mark>least effort</mark>.</li>
+<li><strong>F:</strong> S3 không phải metadata catalog.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 82%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="27 votes." title="">BCE (82%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 18%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">BCF (18%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -4550,7 +4550,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps Engineer has several legacy applications that all generate different log formats. The Engineer must standardize the formats before writing them to<br>Amazon <mark>S3</mark> for querying and analysis.<br>How can this requirement be met at the LOWEST cost?<br>
+                                            A DevOps Engineer has several legacy applications that all generate different <mark>log formats</mark>. The Engineer must <mark>standardize</mark> the formats before writing them to<br><mark>Amazon S3</mark> for querying and analysis.<br>How can this requirement be met at the <mark>LOWEST cost</mark>?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -4626,14 +4626,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> S3</p>
+<p><strong>Keywords:</strong> standardize, log formats, Amazon S3, LOWEST cost</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D dùng <mark>AWS Lambda</mark>, <mark>Amazon S3</mark> để đáp ứng yêu cầu chính, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Kinesis Agent + Firehose + Lambda chuẩn hóa log trước khi ghi vào <mark>Amazon S3</mark> là serverless và chi phí thấp.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này thiên về <mark>Amazon S3</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>B:</strong> Phương án này không xử lý đúng dịch vụ trọng tâm như <mark>S3</mark>.</li>
-<li><strong>C:</strong> Phương án này thiên về <mark>Amazon Redshift</mark>, <mark>Amazon S3</mark> nhưng không khớp với các keyword chính của đề.</li>
+<li><strong>A:</strong> EMR tốn chi phí cao.</li>
+<li><strong>B:</strong> QuickSight không phải công cụ chuẩn hóa log.</li>
+<li><strong>C:</strong> Redshift Spectrum đắt và không phù hợp <mark>LOWEST cost</mark>.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">D (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -4663,7 +4663,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company needs to implement a robust CI/CD pipeline to automate the deployment of an application in AWS. The pipeline must support continuous integration, continuous delivery, and automatic <mark>rollback</mark> upon deployment failure. The entire CI/CD pipeline must be capable of being re-provisioned in alternate AWS accounts or Regions within minutes. A DevOps engineer has already created an <mark>AWS CodeCommit</mark> repository to store the source code.<br>Which combination of actions should be taken when building this pipeline to meet these requirements? (Choose three.)<br>
+                                            A company needs to implement a robust <mark>CI/CD</mark> pipeline to automate the deployment of an application in AWS. The pipeline must support continuous integration, continuous delivery, and <mark>automatic rollback</mark> upon deployment failure. The entire <mark>CI/CD</mark> pipeline must be capable of being <mark>re-provisioned</mark> in alternate AWS accounts or <mark>Regions</mark> within minutes. A DevOps engineer has already created an AWS <mark>CodeCommit</mark> repository to store the source code.<br>Which combination of actions should be taken when building this pipeline to meet these requirements? (Choose three.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -4761,14 +4761,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> AWS CodeCommit, rollback</p>
+<p><strong>Keywords:</strong> CI/CD, automatic rollback, re-provisioned, alternate accounts, Regions, CodeCommit</p>
 <p><strong>Đáp án:</strong> ADF</p>
-<p><strong>Vì sao đúng:</strong> Đáp án ADF dùng <mark>AWS CodePipeline</mark>, <mark>AWS CodeBuild</mark> để đáp ứng <mark>rollback</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> <mark>CodePipeline</mark> + <mark>CodeBuild</mark> đáp ứng CI; <mark>Elastic Beanstalk</mark> hỗ trợ deploy và rollback; <mark>CloudFormation</mark> giúp tái tạo hạ tầng nhanh ở tài khoản/vùng khác.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> Phương án này không đáp ứng keyword <mark>rollback</mark> nên không thỏa yêu cầu.</li>
-<li><strong>C:</strong> Phương án này không đáp ứng keyword <mark>rollback</mark> nên không thỏa yêu cầu.</li>
-<li><strong>E:</strong> Phương án này không đáp ứng keyword <mark>rollback</mark> nên không thỏa yêu cầu.</li>
+<li><strong>B:</strong> CodeCommit không phải nơi lưu artifact để deploy.</li>
+<li><strong>C:</strong> Tự tạo ASG/ALB làm mục tiêu deploy tăng vận hành, không nhanh tái tạo.</li>
+<li><strong>E:</strong> SQS không cần thiết cho pipeline CI/CD.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="18 votes." title="">ADF (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -4794,7 +4794,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company is building a solution for storing files containing Personally Identifiable Information (PII) on <mark>AWS</mark>.<br>Requirements state:<br>✑ All data must be encrypted at rest and in transit.<br>✑ All data must be replicated in at least two locations that are at least 500 miles (805 kilometers) apart.<br>Which solution meets these requirements?<br>
+                                            A company is building a solution for storing files containing Personally Identifiable Information (<mark>PII</mark>) on AWS.<br>Requirements state:<br>✑ All data must be <mark>encrypted at rest</mark> and <mark>in transit</mark>.<br>✑ All data must be <mark>replicated</mark> in at least two locations that are at least <mark>500 miles</mark> (805 kilometers) apart.<br>Which solution meets these requirements?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -4870,14 +4870,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> AWS</p>
+<p><strong>Keywords:</strong> PII, encrypted at rest, in transit, replicated, 500 miles, S3</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Đáp án B dùng <mark>Amazon S3</mark> để đáp ứng yêu cầu chính, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Yêu cầu <mark>replicated</mark> cách xa 500 miles cần cross-Region; HTTPS đảm bảo in transit và <mark>SSE-S3</mark> đảm bảo at rest.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này thiên về <mark>Availability Zones</mark>, <mark>Amazon S3</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>C:</strong> Phương án này thiên về <mark>Amazon S3</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>D:</strong> Phương án này thiên về <mark>Availability Zones</mark>, <mark>Amazon S3</mark> nhưng không khớp với các keyword chính của đề.</li>
+<li><strong>A:</strong> SSE-C không hỗ trợ cross-region replication và AZ không cách 500 miles.</li>
+<li><strong>C:</strong> IAM role không phải cơ chế bắt buộc HTTPS.</li>
+<li><strong>D:</strong> AZ không đáp ứng khoảng cách 500 miles.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="9 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -4903,7 +4903,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company is using an <mark>AWS CodeBuild</mark> project to build and package an application. The packages are copied to a shared <mark>Amazon S3</mark> bucket before being deployed across multiple AWS accounts.<br>The buildspec.yml file contains the following:<br><img src="/assets/media/exam-media/04243/0002400001.png" class="in-exam-image"><br>The DevOps Engineer has noticed that anybody with an AWS account is able to download the artifacts.<br>What steps should the DevOps Engineer take to stop this?<br>
+                                            A company is using an AWS <mark>CodeBuild</mark> project to build and package an application. The packages are copied to a shared Amazon S3 bucket before being deployed across multiple AWS accounts.<br>The buildspec.yml file contains the following:<br><img src="/assets/media/exam-media/04243/0002400001.png" class="in-exam-image"><br>The DevOps Engineer has noticed that anybody with an AWS account is able to download the artifacts.<br>What steps should the DevOps Engineer take to stop this?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -4979,14 +4979,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> AWS CodeBuild, Amazon S3</p>
+<p><strong>Keywords:</strong> CodeBuild, shared S3, anyone download, ACL authenticated-read</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D dùng cách triển khai phù hợp để đáp ứng yêu cầu chính, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Bỏ ACL <mark>authenticated-read</mark> và dùng bucket policy giới hạn tài khoản được phép đọc sẽ chặn tải công khai.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này không xử lý đúng dịch vụ trọng tâm như <mark>AWS CodeBuild</mark>, <mark>Amazon S3</mark>.</li>
-<li><strong>B:</strong> Phương án này thiên về <mark>S3</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>C:</strong> Phương án này thiên về <mark>S3</mark> nhưng không khớp với các keyword chính của đề.</li>
+<li><strong>A:</strong> public-read vẫn mở public.</li>
+<li><strong>B:</strong> ACL mặc định không giới hạn theo tài khoản AWS cụ thể.</li>
+<li><strong>C:</strong> Deny principal * sẽ chặn cả tài khoản hợp lệ.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 75%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">D (75%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">A (25%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -5011,7 +5011,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps engineer needs to grant several external contractors access to a legacy application that runs on an Amazon Linux <mark>Amazon EC2</mark> instance. The application server is available only in a <mark>private</mark> subnet. The contractors are not authorized for VPN access.<br>What should the DevOps engineer do to grant the contactors access to the application server?<br>
+                                            A DevOps engineer needs to grant several external <mark>contractors</mark> access to a legacy application that runs on an Amazon Linux Amazon EC2 instance. The application server is available only in a <mark>private subnet</mark>. The <mark>contractors</mark> are not authorized for VPN access.<br>What should the DevOps engineer do to grant the contactors access to the application server?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -5087,14 +5087,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Amazon EC2, private</p>
+<p><strong>Keywords:</strong> private subnet, no VPN, contractors, Session Manager</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D dùng <mark>AWS Systems Manager</mark>, <mark>Session Manager</mark> để đáp ứng <mark>private</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> <mark>Session Manager</mark> cho phép truy cập instance trong <mark>private subnet</mark> mà không cần VPN; chỉ cần IAM quyền ssm:StartSession.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này thiên về <mark>AWS Systems Manager</mark>, <mark>Session Manager</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>B:</strong> Phương án này không xử lý đúng dịch vụ trọng tâm như <mark>Amazon EC2</mark>.</li>
-<li><strong>C:</strong> Phương án này thiên về <mark>EC2</mark> nhưng không khớp với các keyword chính của đề.</li>
+<li><strong>A:</strong> SSH keys + Session Manager dùng sai cơ chế credential.</li>
+<li><strong>B:</strong> SSH trực tiếp không khả thi vì private subnet và không có VPN.</li>
+<li><strong>C:</strong> Key pair không giải quyết bài toán không có đường truy cập mạng.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 85%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="11 votes." title="">D (85%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 15%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">B (15%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -5119,7 +5119,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company hosts its staging website using an <mark>Amazon EC2</mark> instance backed with Amazon EBS storage. The company wants to recover quickly with minimal data losses in the event of network connectivity issues or power failures on the EC2 instance.<br>Which solution will meet these requirements?<br>
+                                            A company hosts its staging w<mark>ebs</mark>ite using an Amazon EC2 instance backed with Amazon <mark>EBS</mark> storage. The company wants to <mark>recover quickly</mark> with <mark>minimal data loss</mark>es in the event of network connectivity issues or power failures on the EC2 instance.<br>Which solution will meet these requirements?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -5195,14 +5195,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Amazon EC2</p>
+<p><strong>Keywords:</strong> EBS, recover quickly, minimal data loss, StatusCheckFailed_System</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C dùng <mark>Amazon CloudWatch</mark>, <mark>EC2</mark> để đáp ứng yêu cầu chính, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> EC2 recovery action trên <mark>StatusCheckFailed_System</mark> khôi phục instance trên host mới, giữ nguyên <mark>EBS</mark> nên phục hồi nhanh và ít mất dữ liệu.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này thiên về <mark>Auto Scaling</mark>, <mark>EC2</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>B:</strong> Phương án này thiên về <mark>Auto Scaling</mark>, <mark>EC2</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>D:</strong> Phương án này thiên về <mark>Amazon CloudWatch</mark>, <mark>EC2</mark> nhưng không khớp với các keyword chính của đề.</li>
+<li><strong>A:</strong> ASG thay instance sẽ mất EBS gắn hiện tại.</li>
+<li><strong>B:</strong> Lifecycle hook không xử lý lỗi phần cứng.</li>
+<li><strong>D:</strong> Reboot chỉ xử lý lỗi trong instance, không giải quyết lỗi hệ thống.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 77%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="10 votes." title="">C (77%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 23%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">B (23%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -5231,7 +5231,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company has built a web service that runs on <mark>Amazon EC2</mark> instances behind an <mark>Application Load Balancer</mark> (<mark>ALB</mark>). The company has deployed the application in us-east-1. <mark>Amazon Route 53</mark> provides an external DNS that routes <mark>traffic</mark> from example.com to the application, created with appropriate health checks.<br>The company has deployed a second environment for the application in eu-west-1. The company wants <mark>traffic</mark> to be routed to whichever environment results in the best response time for each user. If there is an outage in one Region, <mark>traffic</mark> should be directed to the other environment.<br>Which configuration will achieve these requirements?<br>A.<br>✑ A subdomain us.example.com with weighted routing: the US <mark>ALB</mark> with weight 2 and the EU <mark>ALB</mark> with weight 1.<br>✑ Another subdomain eu.example.com with weighted routing: the EU <mark>ALB</mark> with weight 2 and the US <mark>ALB</mark> with weight 1.<br>✑ Geolocation routing records for example.com: North America aliased to us.example.com and Europe aliased to eu.example.com.<br>B.<br>✑ A subdomain us.example.com with <mark>latency</mark>-based routing: the US <mark>ALB</mark> as the first target and the EU <mark>ALB</mark> as the second target.<br>✑ Another subdomain eu.example.com with <mark>latency</mark>-based routing: the EU <mark>ALB</mark> as the first target and the US <mark>ALB</mark> as the second target.<br>✑ <mark>Failover</mark> routing records for example.com aliased to us.example.com as the first target and eu.example.com as the second target.<br>C.<br>✑ A subdomain us.example.com with <mark>failover</mark> routing: the US <mark>ALB</mark> as primary and the EU <mark>ALB</mark> as secondary.<br>✑ Another subdomain eu.example.com with <mark>failover</mark> routing: the EU <mark>ALB</mark> as primary and the US <mark>ALB</mark> as secondary.<br>✑ <mark>Latency</mark>-based routing records for example.com that are aliased to us.example.com and eu.example.com.<br>D.<br>✑ A subdomain us.example.com with multivalue answer routing: the US <mark>ALB</mark> first and the EU <mark>ALB</mark> second.<br>✑ Another subdomain eu.example.com with multivalue answer routing: the EU <mark>ALB</mark> first and the US <mark>ALB</mark> second.<br>✑ <mark>Failover</mark> routing records for example.com that are aliased to us.example.com and eu.example.com.<br>
+                                            A company has built a web service that runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The company has deployed the application in us-east-1. Amazon <mark>Route 53</mark> provides an external DNS that routes traffic from example.com to the application, created with appropriate health checks.<br>The company has deployed a second environment for the application in eu-west-1. The company wants traffic to be routed to whichever environment results in the <mark>best response time</mark> for each user. If there is an <mark>outage</mark> in one Region, traffic should be directed to the other environment.<br>Which configuration will achieve these requirements?<br>A.<br>✑ A subdomain us.example.com with weighted routing: the US ALB with weight 2 and the EU ALB with weight 1.<br>✑ Another subdomain eu.example.com with weighted routing: the EU ALB with weight 2 and the US ALB with weight 1.<br>✑ Geolocation routing records for example.com: North America aliased to us.example.com and Europe aliased to eu.example.com.<br>B.<br>✑ A subdomain us.example.com with <mark>latency</mark>-based routing: the US ALB as the first target and the EU ALB as the second target.<br>✑ Another subdomain eu.example.com with <mark>latency</mark>-based routing: the EU ALB as the first target and the US ALB as the second target.<br>✑ Failover routing records for example.com aliased to us.example.com as the first target and eu.example.com as the second target.<br>C.<br>✑ A subdomain us.example.com with failover routing: the US ALB as primary and the EU ALB as secondary.<br>✑ Another subdomain eu.example.com with failover routing: the EU ALB as primary and the US ALB as secondary.<br>✑ <mark>Latency</mark>-based routing records for example.com that are aliased to us.example.com and eu.example.com.<br>D.<br>✑ A subdomain us.example.com with multivalue answer routing: the US ALB first and the EU ALB second.<br>✑ Another subdomain eu.example.com with multivalue answer routing: the EU ALB first and the US ALB second.<br>✑ Failover routing records for example.com that are aliased to us.example.com and eu.example.com.<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -5256,11 +5256,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Application Load Balancer, Amazon Route 53, Amazon EC2, failover, latency, traffic, ALB</p>
+<p><strong>Keywords:</strong> best response time, latency, Route 53, outage</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C dùng cách triển khai phù hợp để đáp ứng <mark>failover</mark>, <mark>latency</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Kết hợp <mark>latency</mark>-based routing cho example.com và failover cho từng subdomain đảm bảo chọn vùng nhanh nhất và tự chuyển khi <mark>outage</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
+<li><strong>A:</strong> Geolocation không chọn theo <mark>latency</mark>.</li>
+<li><strong>B:</strong> Failover ở apex không tối ưu latency.</li>
+<li><strong>D:</strong> Multivalue không đảm bảo chọn vùng nhanh nhất.</li>
 </ul>
 </span>
                                     </p>
@@ -5283,7 +5286,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company has multiple development teams sharing one AWS account. The development team's manager wants to be able to automatically stop <mark>Amazon EC2</mark> instances and receive notifications if resources are idle and not tagged as production resources.<br>Which solution will meet these requirements?<br>
+                                            A company has multiple development teams sharing one AWS account. The development team's manager wants to be able to automatically <mark>stop</mark> Amazon EC2 instances and receive <mark>notifications</mark> if resources are <mark>idle</mark> and not tagged as production resources.<br>Which solution will meet these requirements?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -5359,14 +5362,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Amazon EC2</p>
+<p><strong>Keywords:</strong> idle, not tagged production, stop, notifications</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C dùng <mark>CloudWatch Events</mark>, <mark>Amazon CloudWatch</mark> để đáp ứng yêu cầu chính, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Trusted Advisor có check tài nguyên nhàn rỗi; EventBridge + Lambda có thể dừng instance không gắn tag production và gửi <mark>notifications</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này thiên về <mark>CloudWatch Events</mark>, <mark>Amazon CloudWatch</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>B:</strong> Phương án này thiên về <mark>AWS Systems Manager</mark>, <mark>CloudWatch Events</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>D:</strong> Phương án này thiên về <mark>CloudWatch Events</mark>, <mark>Amazon CloudWatch</mark> nhưng không khớp với các keyword chính của đề.</li>
+<li><strong>A:</strong> Status check không phản ánh <mark>idle</mark>.</li>
+<li><strong>B:</strong> SSM events không phát hiện tài nguyên nhàn rỗi.</li>
+<li><strong>D:</strong> Inspector không dùng để xác định idle instance.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 67%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">C (67%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 33%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">A (33%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -5391,7 +5394,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            An n-tier application requires a table in an <mark>Amazon RDS</mark> MySQL DB instance to be dropped and repopulated at each deployment. This process can take several minutes and the web tier cannot come online until the process is complete. Currently, the web tier is configured in an <mark>Amazon EC2</mark> <mark>Auto Scaling</mark> group, with instances being terminated and replaced at each deployment. The MySQL table is populated by running a SQL query through an <mark>AWS CodeBuild</mark> job.<br>What should be done to ensure that the web tier does not come online before the database is completely configured?<br>
+                                            An n-tier application requires a table in an Amazon RDS MySQL DB instance to be dropped and repopulated at each <mark>deployment</mark>. This process can take several minutes and the <mark>web tier</mark> cannot come online until the process is complete. Currently, the <mark>web tier</mark> is configured in an Amazon EC2 <mark>Auto Scaling</mark> group, with instances being terminated and replaced at each <mark>deployment</mark>. The MySQL table is populated by running a SQL query through an AWS CodeBuild job.<br>What should be done to ensure that the <mark>web tier</mark> does not come online before the database is completely configured?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -5467,14 +5470,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> AWS CodeBuild, Auto Scaling, Amazon EC2, Amazon RDS</p>
+<p><strong>Keywords:</strong> table repopulated, web tier, Auto Scaling, deployment</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D dùng <mark>Auto Scaling</mark>, <mark>EC2</mark> để đáp ứng yêu cầu chính, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Auto Scaling lifecycle hook cho phép giữ instance ở Pending/Terminating tới khi DB hoàn tất, đảm bảo web tier không lên sớm.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này thiên về <mark>Amazon Aurora</mark>, <mark>RDS</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>B:</strong> Phương án này thiên về <mark>Auto Scaling</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>C:</strong> Phương án này không xử lý đúng dịch vụ trọng tâm như <mark>AWS CodeBuild</mark>, <mark>Auto Scaling</mark>.</li>
+<li><strong>A:</strong> Aurora không giải quyết việc đồng bộ web tier.</li>
+<li><strong>B:</strong> Delay cố định bằng user data không đảm bảo DB đã xong.</li>
+<li><strong>C:</strong> Step Functions phức tạp hơn, không gắn trực tiếp vào ASG.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="4 votes." title="">D (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -5500,7 +5503,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A highly regulated company has a <mark>policy</mark> that DevOps Engineers should not log in to their <mark>Amazon EC2</mark> instances except in emergencies. If a DevOps Engineer does log in, the <mark>Security</mark> team must be notified within 15 minutes of the occurrence.<br>Which solution will meet these requirements?<br>
+                                            A highly regulated company has a policy that DevOps Engineers should not log in to their Amazon EC2 instances except in emergencies. If a DevOps Engineer does log in, the Security team must be notified within 15 minutes of the occurrence.<br>Which solution will meet these requirements?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -5576,14 +5579,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Amazon EC2, security, policy</p>
+<p><strong>Keywords:</strong> EC2 logins, notify within 15 minutes, CloudWatch Logs</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Đáp án B dùng <mark>Amazon CloudWatch</mark>, <mark>CloudWatch Logs</mark> để đáp ứng <mark>security</mark>, <mark>policy</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> CloudWatch agent đẩy log đăng nhập lên <mark>CloudWatch Logs</mark>; metric filter + SNS cảnh báo nhanh trong 15 phút.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này không đáp ứng keyword <mark>policy</mark> nên không thỏa yêu cầu.</li>
-<li><strong>C:</strong> Phương án này không đáp ứng keyword <mark>policy</mark> nên không thỏa yêu cầu.</li>
-<li><strong>D:</strong> Phương án này không đáp ứng keyword <mark>policy</mark> nên không thỏa yêu cầu.</li>
+<li><strong>A:</strong> Inspector không theo dõi đăng nhập OS.</li>
+<li><strong>C:</strong> CloudTrail chỉ ghi API, không phải login OS.</li>
+<li><strong>D:</strong> S3 + Athena có độ trễ lớn.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 67%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="10 votes." title="">B (67%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 33%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="5 votes." title="">C (33%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -5608,7 +5611,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps engineer has automated a web service deployment by using <mark>AWS CodePipeline</mark> with the following steps:<br>1. An <mark>AWS CodeBuild</mark> project compiles the deployment artifact and runs unit tests.<br>2. An <mark>AWS CodeDeploy</mark> deployment group deploys the web service to <mark>Amazon EC2</mark> instances in the staging environment.<br>3. A CodeDeploy deployment group deploys the web service to EC2 instances in the production environment.<br>The quality assurance (QA) team requests permission to inspect the build artifact before the deployment to the production environment occurs. The QA team wants to run an internal penetration testing tool to conduct manual tests. The tool will be invoked by a REST API call.<br>Which combination of actions should the DevOps engineer take to fulfill this request? (Choose two.)<br>
+                                            A DevOps engineer has automated a web service deployment by using AWS CodePipeline with the following steps:<br>1. An AWS CodeBuild project compiles the deployment artifact and runs unit tests.<br>2. An AWS CodeDeploy deployment group deploys the web service to Amazon EC2 instances in the staging environment.<br>3. A CodeDeploy deployment group deploys the web service to EC2 instances in the production environment.<br>The quality assurance (QA) team requests permission to inspect the build artifact before the deployment to the production environment occurs. The QA team wants to run an internal <mark>penetration testing</mark> tool to conduct manual tests. The tool will be invoked by a <mark>REST API</mark> call.<br>Which combination of actions should the DevOps engineer take to fulfill this request? (Choose two.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -5695,14 +5698,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> AWS CodePipeline, AWS CodeDeploy, AWS CodeBuild, Amazon EC2</p>
+<p><strong>Keywords:</strong> manual approval, REST API, penetration testing, before production</p>
 <p><strong>Đáp án:</strong> AE</p>
-<p><strong>Vì sao đúng:</strong> Đáp án AE dùng cách triển khai phù hợp để đáp ứng yêu cầu chính, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Cần <mark>manual approval</mark> trước prod và gọi tool qua <mark>REST API</mark>, nên thêm manual approval action và Lambda gọi API.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> Phương án này không xử lý đúng dịch vụ trọng tâm như <mark>AWS CodePipeline</mark>, <mark>AWS CodeDeploy</mark>.</li>
-<li><strong>C:</strong> Phương án này thiên về <mark>CodeDeploy</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>D:</strong> Phương án này không xử lý đúng dịch vụ trọng tâm như <mark>AWS CodePipeline</mark>, <mark>AWS CodeDeploy</mark>.</li>
+<li><strong>B:</strong> Buildspec không hỗ trợ manual approval.</li>
+<li><strong>C:</strong> CodeDeploy không có manual approval stage.</li>
+<li><strong>D:</strong> Gọi API trực tiếp không có bước phê duyệt thủ công.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 88%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="7 votes." title="">AE (88%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 13%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">13%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -5731,7 +5734,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps Engineer manages a large commercial website that runs on <mark>Amazon EC2</mark>. The website uses Amazon Kinesis Data Streams to collect and process web <mark>logs</mark>. The DevOps Engineer manages the Kinesis consumer application, which also runs on <mark>Amazon EC2</mark>.<br>Sudden increases of data cause the Kinesis consumer application to fall behind, and the Kinesis data streams drop records before the records can be processed.<br>The DevOps Engineer must implement a solution to improve stream handling.<br>Which solution meets these requirements with the MOST operational efficiency?<br>
+                                            A DevOps Engineer manages a large commercial website that runs on Amazon EC2. The website uses Amazon <mark>Kinesis Data Streams</mark> to collect and process web logs. The DevOps Engineer manages the Kinesis <mark>consumer application</mark>, which also runs on Amazon EC2.<br>Sudden increases of data cause the Kinesis <mark>consumer application</mark> to fall behind, and the <mark>Kinesis data streams</mark> drop records before the records can be processed.<br>The DevOps Engineer must implement a solution to improve stream handling.<br>Which solution meets these requirements with the MOST operational efficiency?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -5807,14 +5810,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Amazon EC2, logs</p>
+<p><strong>Keywords:</strong> Kinesis Data Streams, consumer application, IteratorAgeMilliseconds, scale</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C dùng <mark>AWS Lambda</mark> để đáp ứng <mark>logs</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Chuyển consumer sang <mark>AWS Lambda</mark> giúp tự động scale theo shard và giảm độ trễ, giải quyết lag theo <mark>IteratorAgeMilliseconds</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này thiên về <mark>Amazon S3</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>B:</strong> Phương án này không đáp ứng keyword <mark>logs</mark> nên không thỏa yêu cầu.</li>
-<li><strong>D:</strong> Phương án này không đáp ứng keyword <mark>logs</mark> nên không thỏa yêu cầu.</li>
+<li><strong>A:</strong> EMR/S3 thay đổi kiến trúc và độ trễ cao.</li>
+<li><strong>B:</strong> Scale EC2 consumer thủ công vẫn có bottleneck.</li>
+<li><strong>D:</strong> Tăng shard chỉ tăng throughput, không giải quyết consumer kịp thời.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 47%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="14 votes." title="">C (47%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 43%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="13 votes." title="">B (43%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 10%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">10%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -5838,7 +5841,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company uses AWS Organizations to manage multiple accounts. Information <mark>security</mark> policies require that all unencrypted Amazon EBS volumes be marked as non-compliant. A DevOps engineer needs to automatically deploy the solution and ensure that this <mark>compliance</mark> check is always present.<br>With solution will accomplish this?<br>
+                                            A company uses <mark>AWS Organizations</mark> to manage multiple accounts. Information security policies require that all unencrypted Amazon EBS volumes be marked as <mark>non-compliant</mark>. A DevOps engineer needs to automatically deploy the solution and ensure that this compliance check is <mark>always present</mark>.<br>With solution will accomplish this?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -5914,14 +5917,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> compliance, security</p>
+<p><strong>Keywords:</strong> AWS Organizations, unencrypted EBS, non-compliant, always present</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Đáp án B dùng <mark>AWS Config</mark> để đáp ứng <mark>compliance</mark>, <mark>security</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> <mark>AWS Config</mark> organizational rule kiểm tra mã hóa EBS ở mọi account; SCP ngăn tắt Config để đảm bảo luôn có kiểm tra.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này không đáp ứng keyword <mark>compliance</mark> nên không thỏa yêu cầu.</li>
-<li><strong>C:</strong> Phương án này không đáp ứng keyword <mark>compliance</mark> nên không thỏa yêu cầu.</li>
-<li><strong>D:</strong> Phương án này không đáp ứng keyword <mark>compliance</mark> nên không thỏa yêu cầu.</li>
+<li><strong>A:</strong> Inspector không phù hợp kiểm tra EBS encryption trên toàn org.</li>
+<li><strong>C:</strong> SCP chỉ chặn tạo, không tạo cơ chế báo cáo compliance.</li>
+<li><strong>D:</strong> Liệt kê thủ công không đảm bảo luôn có kiểm tra.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 92%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="12 votes." title="">B (92%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 8%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">8%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -5946,7 +5949,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company develops and maintains a web application using <mark>Amazon EC2</mark> instances and an <mark>Amazon RDS</mark> for SQL Server DB instance in a single Availability<br>Zone. The resources need to run only when new deployments are being tested using <mark>AWS CodePipeline</mark>. Testing occurs one or more times a week and each test takes 2-3 hours to run. A DevOps engineer wants a solution that does not change the architecture components.<br>Which solution will meet these requirements in the MOST <mark>cost-effective</mark> manner?<br>
+                                            A company develops and maintains a web application using Amazon EC2 instances and an Amazon RDS for SQL Server DB instance in a single Availability<br>Zone. The resources need to run only when new deployments are being tested using AWS <mark>CodePipeline</mark>. Testing occurs one or more times a week and each test takes 2-3 hours to run. A DevOps engineer wants a solution that does not change the architecture components.<br>Which solution will meet these requirements in the MOST <mark>cost-effective</mark> manner?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -6022,14 +6025,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> AWS CodePipeline, cost-effective, Amazon EC2, Amazon RDS</p>
+<p><strong>Keywords:</strong> only when tests, CodePipeline, cost-effective, no architecture change</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D dùng <mark>AWS Systems Manager</mark>, <mark>CloudWatch Events</mark> để đáp ứng <mark>cost-effective</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> EventBridge trigger <mark>AWS Systems Manager Automation</mark> để start/stop EC2 và RDS trước/sau test, không đổi kiến trúc và tối ưu chi phí.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này không đáp ứng keyword <mark>cost-effective</mark> nên không thỏa yêu cầu.</li>
-<li><strong>B:</strong> Phương án này không đáp ứng keyword <mark>cost-effective</mark> nên không thỏa yêu cầu.</li>
-<li><strong>C:</strong> Phương án này không đáp ứng keyword <mark>cost-effective</mark> nên không thỏa yêu cầu.</li>
+<li><strong>A:</strong> Đổi Aurora Serverless là thay đổi kiến trúc.</li>
+<li><strong>B:</strong> ASG không dừng RDS.</li>
+<li><strong>C:</strong> Spot/Reserved không giải quyết yêu cầu chạy theo lịch test.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">D (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -6055,7 +6058,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            The Development team has grown substantially in recent months and so has the number of projects that use separate code repositories. The current process involves configuring <mark>AWS CodePipeline</mark> manually. There have been service limit <mark>alerts</mark> regarding the number of <mark>Amazon S3</mark> buckets that exist.<br>Which pipeline option will reduce S3 bucket sprawl <mark>alerts</mark>?<br>
+                                            The Development team has grown substantially in recent months and so has the number of projects that use separate code repositories. The current process involves configuring AWS <mark>CodePipeline</mark> manually. There have been <mark>service limit</mark> alerts regarding the number of Amazon S3 buckets that exist.<br>Which pipeline option will reduce <mark>S3 bucket sprawl</mark> alerts?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -6131,14 +6134,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> AWS CodePipeline, Amazon S3, alerts</p>
+<p><strong>Keywords:</strong> CodePipeline, S3 bucket sprawl, service limit</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Đáp án B dùng <mark>S3</mark> để đáp ứng <mark>alerts</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Dùng một <mark>S3 bucket</mark> chung với prefix cho từng project giảm số bucket và tránh cảnh báo limit.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này không đáp ứng keyword <mark>alerts</mark> nên không thỏa yêu cầu.</li>
-<li><strong>C:</strong> Phương án này không đáp ứng keyword <mark>alerts</mark> nên không thỏa yêu cầu.</li>
-<li><strong>D:</strong> Phương án này không đáp ứng keyword <mark>alerts</mark> nên không thỏa yêu cầu.</li>
+<li><strong>A:</strong> Gộp repo không giải quyết số bucket.</li>
+<li><strong>C:</strong> Tạo pipeline ở region khác không giảm bucket.</li>
+<li><strong>D:</strong> Tạo thêm bucket càng tăng sprawl.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 71%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="5 votes." title="">B (71%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 29%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">D (29%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -6163,7 +6166,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company runs several applications across multiple <mark>AWS</mark> accounts in an organization in <mark>AWS</mark> Organizations. Some of the resources are not tagged properly and the company's finance team cannot determine which costs are associated with which applications. A DevOps engineer must remediate this issue and prevent this issue from happening in the future.<br>Which combination of actions should the DevOps engineer take to meet these requirements? (Choose two.)<br>
+                                            A company runs several applications across multiple AWS accounts in an organization in <mark>AWS Organizations</mark>. Some of the resources are <mark>not tagged</mark> properly and the company's finance team cannot determine which costs are associated with which applications. A DevOps engineer must remediate this issue and prevent this issue from happening in the future.<br>Which combination of actions should the DevOps engineer take to meet these requirements? (Choose two.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -6250,14 +6253,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> AWS</p>
+<p><strong>Keywords:</strong> not tagged, prevent future, AWS Organizations, cost allocation</p>
 <p><strong>Đáp án:</strong> BD</p>
-<p><strong>Vì sao đúng:</strong> Đáp án BD dùng cách triển khai phù hợp để đáp ứng yêu cầu chính, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Dùng <mark>SCP</mark> bắt buộc tag để ngăn tái diễn và dùng Tag Editor để gắn tag cho tài nguyên hiện có.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này không phù hợp với yêu cầu chính của đề.</li>
-<li><strong>C:</strong> Phương án này không phù hợp với yêu cầu chính của đề.</li>
-<li><strong>E:</strong> Phương án này không phù hợp với yêu cầu chính của đề.</li>
+<li><strong>A:</strong> Chỉ bật cost allocation tag không sửa thiếu tag.</li>
+<li><strong>C:</strong> Budgets không gắn tag tài nguyên.</li>
+<li><strong>E:</strong> Budget report không tự remediate.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 95%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="18 votes." title="">BD (95%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 5%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">5%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -6286,7 +6289,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            An online company uses <mark>Amazon EC2</mark> <mark>Auto Scaling</mark> extensively to provide an excellent customer experience while minimizing the number of running EC2 instances. The company's self-hosted Puppet environment in the application layer manages the configuration of the instances. The IT manager wants the lowest licensing costs and wants to ensure that whenever the EC2 <mark>Auto Scaling</mark> group scales down, removed EC2 instances are deregistered from the Puppet master as soon as possible.<br>How can the requirement be met?<br>
+                                            An online company uses Amazon EC2 <mark>Auto Scaling</mark> extensively to provide an excellent customer experience while minimizing the number of running EC2 instances. The company's self-hosted <mark>Puppet</mark> environment in the application layer manages the configuration of the instances. The IT manager wants the <mark>lowest licensing costs</mark> and wants to ensure that whenever the EC2 <mark>Auto Scaling</mark> group scales down, removed EC2 instances are <mark>deregister</mark>ed from the <mark>Puppet</mark> master as soon as possible.<br>How can the requirement be met?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -6362,14 +6365,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Auto Scaling, Amazon EC2</p>
+<p><strong>Keywords:</strong> Auto Scaling, Puppet, deregister, scale in, lowest licensing costs</p>
 <p><strong>Đáp án:</strong> A</p>
-<p><strong>Vì sao đúng:</strong> Đáp án A dùng <mark>AWS CodeDeploy</mark>, <mark>Auto Scaling</mark> để đáp ứng yêu cầu chính, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> User data cài CodeDeploy/Puppet agent và lifecycle hook <mark>EC2_INSTANCE_TERMINATING</mark> đảm bảo deregister khi scale in, tránh license dư.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> Phương án này thiên về <mark>AWS CodeDeploy</mark>, <mark>Auto Scaling</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>C:</strong> Phương án này thiên về <mark>AWS CodeDeploy</mark>, <mark>Auto Scaling</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>D:</strong> Phương án này thiên về <mark>AWS Systems Manager</mark>, <mark>Auto Scaling</mark> nhưng không khớp với các keyword chính của đề.</li>
+<li><strong>B:</strong> ApplicationStop hook không gắn với scale-in của ASG.</li>
+<li><strong>C:</strong> User data stop script không đảm bảo chạy khi terminate.</li>
+<li><strong>D:</strong> SSM không cần thiết và tăng vận hành.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 53%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="9 votes." title="">A (53%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 47%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="8 votes." title="">D (47%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -6394,7 +6397,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company uses a series of individual <mark>Amazon CloudFormation</mark> templates to deploy its <mark>multi-Region</mark> applications. These templates must be deployed in a specific order. The company is making more changes to the templates than previously expected and wants to deploy new templates more efficiently. Additionally, the data engineering team must be notified of all changes to the templates.<br>What should the company do to accomplish these goals?<br>
+                                            A company uses a series of individual Amazon <mark>CloudFormation templates</mark> to deploy its multi-Region applications. These templates must be deployed in a <mark>specific order</mark>. The company is making more changes to the templates than previously expected and wants to deploy new templates more <mark>efficient</mark>ly. Additionally, the data engineering team must be notified of all changes to the templates.<br>What should the company do to accomplish these goals?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -6470,14 +6473,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Amazon CloudFormation, multi-Region</p>
+<p><strong>Keywords:</strong> CloudFormation templates, specific order, efficient, notify changes</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D dùng <mark>CloudFormation</mark>, <mark>Amazon SNS</mark> để đáp ứng <mark>multi-Region</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Nested stacks đảm bảo thứ tự triển khai; StackSets mở rộng đa vùng; SNS thông báo thay đổi cho data team.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này không đáp ứng keyword <mark>multi-Region</mark> nên không thỏa yêu cầu.</li>
-<li><strong>B:</strong> Phương án này không đáp ứng keyword <mark>multi-Region</mark> nên không thỏa yêu cầu.</li>
-<li><strong>C:</strong> Phương án này không đáp ứng keyword <mark>multi-Region</mark> nên không thỏa yêu cầu.</li>
+<li><strong>A:</strong> Stack policies không gửi thông báo.</li>
+<li><strong>B:</strong> S3 events không quản lý thứ tự template.</li>
+<li><strong>C:</strong> Drift detection không phải cơ chế cập nhật/notify.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 75%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="9 votes." title="">D (75%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">C (25%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -6502,7 +6505,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company is running an application on <mark>Amazon EC2</mark> instances in an <mark>Auto Scaling</mark> group. Recently, an issue occurred that prevented EC2 instances from launching successfully, and it took several hours for the Support team to discover the issue. The Support team wants to be notified by email whenever an EC2 instance does not start successfully.<br>Which action will accomplish this?<br>
+                                            A company is running an application on Amazon EC2 instances in an <mark>Auto Scaling</mark> group. Recently, an issue occurred that prevented EC2 instances from launching successfully, and it took several hours for the Support team to discover the issue. The Support team wants to be notified by email whenever an EC2 instance does not start successfully.<br>Which action will accomplish this?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -6578,14 +6581,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Auto Scaling, Amazon EC2</p>
+<p><strong>Keywords:</strong> failed instance launch, notify, Auto Scaling</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Đáp án B dùng <mark>Auto Scaling</mark>, <mark>Amazon SNS</mark> để đáp ứng yêu cầu chính, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Auto Scaling có notification trực tiếp tới <mark>Amazon SNS</mark> khi instance launch thất bại.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này thiên về <mark>Auto Scaling</mark>, <mark>AWS Lambda</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>C:</strong> Phương án này thiên về <mark>Amazon CloudWatch</mark>, <mark>Auto Scaling</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>D:</strong> Phương án này thiên về <mark>Amazon EC2</mark>, <mark>Amazon SNS</mark> nhưng không khớp với các keyword chính của đề.</li>
+<li><strong>A:</strong> Health check Lambda không bắt được sự kiện launch fail.</li>
+<li><strong>C:</strong> AttachInstances không liên quan launch fail.</li>
+<li><strong>D:</strong> EC2 status check không phản ánh lỗi launch của ASG.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -6611,7 +6614,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company uses AWS Storage Gateway in file gateway mode in front of an <mark>Amazon S3</mark> bucket that is used by multiple resources. In the morning when business begins, users do not see the objects processed by a third party the previous evening. When a DevOps engineer looks directly at the S3 bucket, the data is there, but it is missing in Storage Gateway.<br>Which solution ensures that all the updated third-party files are available in the morning?<br>
+                                            A company uses AWS <mark>Storage Gateway</mark> in <mark>file gateway</mark> mode in front of an Amazon S3 bucket that is used by multiple resources. In the morning when business begins, users do not see the objects processed by a third party the previous evening. When a DevOps engineer looks directly at the S3 bucket, the data is there, but it is missing in <mark>Storage Gateway</mark>.<br>Which solution ensures that all the updated third-party files are available in the morning?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -6687,14 +6690,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Amazon S3</p>
+<p><strong>Keywords:</strong> Storage Gateway, file gateway, RefreshCache, missing objects</p>
 <p><strong>Đáp án:</strong> A</p>
-<p><strong>Vì sao đúng:</strong> Đáp án A dùng <mark>Amazon EventBridge</mark>, <mark>CloudWatch Events</mark> để đáp ứng yêu cầu chính, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> File gateway cần <mark>RefreshCache</mark> để đồng bộ thay đổi S3; chạy theo lịch đảm bảo thấy dữ liệu buổi sáng.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> Phương án này thiên về <mark>S3</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>C:</strong> Phương án này không xử lý đúng dịch vụ trọng tâm như <mark>Amazon S3</mark>.</li>
-<li><strong>D:</strong> Phương án này thiên về <mark>S3</mark> nhưng không khớp với các keyword chính của đề.</li>
+<li><strong>B:</strong> Transfer for SFTP không giải quyết cache.</li>
+<li><strong>C:</strong> Volume gateway là kiến trúc khác.</li>
+<li><strong>D:</strong> Replication không cập nhật cache gateway.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">A (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -6720,7 +6723,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps engineer sets up two <mark>Amazon S3</mark> event notifications for an S3 bucket from the S3 console. Both event notifications will be invoked when an object PUT action occurs. One event notification will invoke an <mark>AWS Lambda</mark> function if the file suffix is .csv. Another event notification will invoke an Amazon Simple<br>Notification Service (<mark>Amazon SNS</mark>) topic if the file suffix is .xlsx<br>The DevOps engineer notices that files with the .csv suffix can invoke the Lambda function successfully. However, files with the .xlsx suffix cannot invoke the SNS topic.<br>Which reason explains why the SNS topic is not invoked when .xlsx files are added to the S3 bucket?<br>
+                                            A DevOps engineer sets up two Amazon <mark>S3 event notification</mark>s for an S3 bucket from the S3 console. Both event notifications will be invoked when an object PUT action occurs. One event notification will invoke an AWS Lambda function if the file suffix is .csv. Another event notification will invoke an Amazon Simple<br>Notification Service (Amazon <mark>SNS</mark>) topic if the file suffix is <mark>.xlsx</mark><br>The DevOps engineer notices that files with the .csv suffix can invoke the Lambda function successfully. However, files with the <mark>.xlsx</mark> suffix cannot invoke the <mark>SNS</mark> topic.<br>Which reason explains why the <mark>SNS</mark> topic is not invoked when <mark>.xlsx</mark> files are added to the S3 bucket?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -6796,14 +6799,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> AWS Lambda, Amazon SNS, Amazon S3</p>
+<p><strong>Keywords:</strong> S3 event notification, SNS, .xlsx</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Đáp án B dùng <mark>Amazon SNS</mark>, <mark>Amazon S3</mark> để đáp ứng yêu cầu chính, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> S3 phải có quyền publish vào <mark>SNS</mark>; thiếu policy thì event .xlsx không kích hoạt.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này thiên về <mark>S3</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>C:</strong> Phương án này thiên về <mark>Amazon SNS</mark>, <mark>Lambda</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>D:</strong> Phương án này thiên về <mark>Amazon SNS</mark>, <mark>S3</mark> nhưng không khớp với các keyword chính của đề.</li>
+<li><strong>A:</strong> S3 cho phép nhiều notification.</li>
+<li><strong>C:</strong> Không có ưu tiên giữa Lambda và SNS.</li>
+<li><strong>D:</strong> SNS là đích hợp lệ cho PUT.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 75%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">B (75%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">A (25%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -6832,7 +6835,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A rapidly growing company wants to scale for Developer demand for AWS development environments. Development environments are created manually in the<br>AWS Management Console. The Networking team uses AWS <mark>CloudFormation</mark> to manage the networking infrastructure, exporting stack output values for the<br>Amazon <mark>VPC</mark> and all subnets. The development environments have common standards, such as Application Load Balancers, <mark>Amazon EC2</mark> <mark>Auto Scaling</mark> groups, <mark>security</mark> groups, and <mark>Amazon DynamoDB</mark> tables.<br>To keep up with the demand, the DevOps Engineer wants to automate the creation of development environments. Because the infrastructure required to support the application is expected to grow, there must be a way to easily update the deployed infrastructure. <mark>CloudFormation</mark> will be used to create a template for the development environments.<br>Which approach will meet these requirements and quickly provide consistent AWS environments for Developers?<br>
+                                            A rapidly growing company wants to scale for Developer demand for AWS development environments. Development environments are created manually in the<br>AWS Management Console. The Networking team uses AWS <mark>CloudFormation</mark> to manage the networking infrastructure, exporting stack output values for the<br>Amazon VPC and all subnets. The development environments have common standards, such as Application Load Balancers, Amazon EC2 Auto Scaling groups, security groups, and Amazon DynamoDB tables.<br>To keep up with the demand, the DevOps Engineer wants to automate the creation of development environments. Because the infrastructure required to support the application is expected to grow, there must be a way to easily update the deployed infrastructure. <mark>CloudFormation</mark> will be used to create a template for the development environments.<br>Which approach will meet these requirements and quickly provide consistent AWS environments for Developers?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -6908,14 +6911,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Amazon DynamoDB, CloudFormation, Auto Scaling, Amazon EC2, security, VPC</p>
+<p><strong>Keywords:</strong> CloudFormation, nested stacks, ImportValue, update easily</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C dùng <mark>VPC</mark> để đáp ứng <mark>security</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Nested stacks tái sử dụng hạ tầng; <mark>Fn::ImportValue</mark> lấy VPC/subnet; change set giúp cập nhật dễ dàng.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này không đáp ứng keyword <mark>security</mark> nên không thỏa yêu cầu.</li>
-<li><strong>B:</strong> Phương án này không đáp ứng keyword <mark>security</mark> nên không thỏa yêu cầu.</li>
-<li><strong>D:</strong> Phương án này không đáp ứng keyword <mark>security</mark> nên không thỏa yêu cầu.</li>
+<li><strong>A:</strong> StackSets + Count không phải cách tạo nhiều env trong một account.</li>
+<li><strong>B:</strong> TemplateURL không lấy output trực tiếp.</li>
+<li><strong>D:</strong> ImportValue trong Parameters không đúng cách dùng cho resources.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">C (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -6941,7 +6944,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps engineer notices that all <mark>Amazon EC2</mark> instances running behind an <mark>Application Load Balancer</mark> in an <mark>Auto Scaling</mark> group are failing to respond to user requests. The EC2 instances are also failing target group HTTP health checks.<br>Upon inspection, the engineer notices the application process was not running in any EC2 instances. There are a significant number of out of memory messages in the system <mark>logs</mark>. The engineer needs to improve the resilience of the application to cope with a potential application memory leak. <mark>Monitoring</mark> and notifications should be enabled to alert when there is an issue.<br>Which combination of actions will meet these requirements? (Choose two.)<br>
+                                            A DevOps engineer notices that all Amazon EC2 instances running behind an Application Load Balancer in an <mark>Auto Scaling</mark> group are failing to respond to user requests. The EC2 instances are also failing target group HTTP <mark>health checks</mark>.<br>Upon inspection, the engineer notices the application process was not running in any EC2 instances. There are a significant number of out of memory messages in the system logs. The engineer needs to improve the resilience of the application to cope with a potential application <mark>memory leak</mark>. <mark>Monitoring</mark> and notifications should be enabled to alert when there is an issue.<br>Which combination of actions will meet these requirements? (Choose two.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -7028,14 +7031,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> Application Load Balancer, Auto Scaling, Amazon EC2, monitoring, logs</p>
+<p><strong>Keywords:</strong> memory leak, health checks, Auto Scaling, monitoring</p>
 <p><strong>Đáp án:</strong> AE</p>
-<p><strong>Vì sao đúng:</strong> Đáp án AE dùng <mark>Auto Scaling</mark> để đáp ứng <mark>monitoring</mark>, <mark>logs</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Thay instance khi fail health check giúp phục hồi; dùng CloudWatch agent thu <mark>memory utilization</mark> và alarm + SNS để cảnh báo.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> Phương án này không đáp ứng keyword <mark>monitoring</mark> nên không thỏa yêu cầu.</li>
-<li><strong>C:</strong> Phương án này không đáp ứng keyword <mark>monitoring</mark> nên không thỏa yêu cầu.</li>
-<li><strong>D:</strong> Phương án này không đáp ứng keyword <mark>monitoring</mark> nên không thỏa yêu cầu.</li>
+<li><strong>B:</strong> Giảm interval không giải quyết memory leak.</li>
+<li><strong>C:</strong> TCP check không đảm bảo ứng dụng chạy.</li>
+<li><strong>D:</strong> CloudWatch dashboard mặc định không có memory metric.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">AE (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -7061,7 +7064,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company wants to migrate a legacy application to AWS and develop a deployment pipeline that uses AWS services only. A DevOps engineer is migrating all of the application code from a Git repository to <mark>AWS CodeCommit</mark> while preserving the history of the repository. The DevOps engineer has set all the <mark>permissions</mark> within CodeCommit, installed the Git client and the AWS CLI on a local computer, and is ready to migrate the repository.<br>Which actions will follow?<br>
+                                            A company wants to migrate a legacy application to AWS and develop a deployment pipeline that uses AWS services only. A DevOps engineer is migrating all of the application code from a Git repository to AWS <mark>CodeCommit</mark> while preserving the history of the repository. The DevOps engineer has set all the permissions within <mark>CodeCommit</mark>, installed the Git client and the AWS CLI on a local computer, and is ready to migrate the repository.<br>Which actions will follow?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -7137,14 +7140,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> AWS CodeCommit, permissions</p>
+<p><strong>Keywords:</strong> CodeCommit, preserving history, mirror</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D dùng <mark>CodeCommit</mark> để đáp ứng <mark>permissions</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Dùng <mark>git clone --mirror</mark> để giữ toàn bộ lịch sử rồi push lên CodeCommit là cách đúng.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này không đáp ứng keyword <mark>permissions</mark> nên không thỏa yêu cầu.</li>
-<li><strong>B:</strong> Phương án này không đáp ứng keyword <mark>permissions</mark> nên không thỏa yêu cầu.</li>
-<li><strong>C:</strong> Phương án này không đáp ứng keyword <mark>permissions</mark> nên không thỏa yêu cầu.</li>
+<li><strong>A:</strong> AWS CLI không clone repo git trực tiếp.</li>
+<li><strong>B:</strong> Copy file mất lịch sử commit.</li>
+<li><strong>C:</strong> Console không hỗ trợ mirror repo.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="9 votes." title="">D (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -7170,7 +7173,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company is using AWS to deploy an application. The development team must automate the deployments. The team has created an <mark>AWS CodePipeline</mark> pipeline to deploy the application to <mark>Amazon EC2</mark> instances using <mark>AWS CodeDeploy</mark> after it has been built using <mark>AWS CodeBuild</mark>.<br>The team wants to add automated testing to the pipeline to confirm that the application is healthy before deploying the code to the EC2 instances. The team also requires a manual approval action before the application is deployed, even if the tests are successful. The testing and approval must be accomplished at the lowest costs, using the simplest management solution.<br>Which solution will meet these requirements?<br>
+                                            A company is using AWS to deploy an application. The development team must automate the deployments. The team has created an AWS CodePipeline pipeline to deploy the application to Amazon EC2 instances using AWS CodeDeploy after it has been built using AWS CodeBuild.<br>The team wants to add <mark>automated testing</mark> to the pipeline to confirm that the application is healthy before deploying the code to the EC2 instances. The team also requires a <mark>manual approval</mark> action before the application is deployed, even if the tests are successful. The testing and approval must be accomplished at the <mark>lowest cost</mark>s, using the simplest management solution.<br>Which solution will meet these requirements?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -7246,14 +7249,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> AWS CodePipeline, AWS CodeDeploy, AWS CodeBuild, Amazon EC2</p>
+<p><strong>Keywords:</strong> automated testing, manual approval, lowest cost</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Đáp án B dùng <mark>Amazon SNS</mark>, <mark>CodeBuild</mark> để đáp ứng yêu cầu chính, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Thêm test action bằng <mark>CodeBuild</mark> sau build và manual approval bằng SNS rồi mới deploy đáp ứng yêu cầu với chi phí thấp.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này thiên về <mark>Amazon SNS</mark>, <mark>CodeBuild</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>C:</strong> Phương án này thiên về <mark>AWS Lambda</mark>, <mark>Amazon SNS</mark> nhưng không khớp với các keyword chính của đề.</li>
-<li><strong>D:</strong> Phương án này thiên về <mark>Amazon EC2</mark>, <mark>Amazon SQS</mark> nhưng không khớp với các keyword chính của đề.</li>
+<li><strong>A:</strong> Manual approval trước test không đúng thứ tự.</li>
+<li><strong>C:</strong> Tạo pipeline mới và Lambda test phức tạp, tốn công.</li>
+<li><strong>D:</strong> Jenkins + SQS tốn vận hành hơn.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -7279,7 +7282,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps engineer wants to deploy a <mark>serverless</mark> web application that is based on <mark>AWS Lambda</mark>. The deployment must meet the following requirements:<br>✑ Provide staging and production environments.<br>✑ Restrict developers from accessing the production environment.<br>✑ Avoid hardcoding passwords in the Lambda functions.<br>✑ Store source code in <mark>AWS CodeCommit</mark>.<br>✑ Use <mark>AWS CodePipeline</mark> to automate the deployment.<br>What is the MOST operationally efficient solution that meets these requirements?<br>
+                                            A DevOps engineer wants to deploy a <mark>serverless</mark> web application that is based on AWS <mark>Lambda</mark>. The deployment must meet the following requirements:<br>✑ Provide <mark>staging</mark> and <mark>production</mark> environments.<br>✑ Restrict developers from accessing the <mark>production</mark> environment.<br>✑ <mark>Avoid hardcoding</mark> passwords in the <mark>Lambda</mark> functions.<br>✑ Store source code in AWS CodeCommit.<br>✑ Use AWS CodePipeline to automate the deployment.<br>What is the MOST operationally efficient solution that meets these requirements?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -7355,14 +7358,14 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-<p><strong>Keywords:</strong> AWS CodePipeline, AWS CodeCommit, AWS Lambda, serverless</p>
+<p><strong>Keywords:</strong> serverless, Lambda, staging, production, restrict access, avoid hardcoding</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Đáp án B dùng <mark>AWS CodeDeploy</mark>, <mark>CodePipeline</mark> để đáp ứng <mark>serverless</mark>, nên phù hợp với yêu cầu câu hỏi.</p>
+<p><strong>Vì sao đúng:</strong> Tách account cho <mark>staging</mark>/<mark>production</mark> giúp hạn chế truy cập; dùng Lambda env vars (mã hóa KMS) tránh hardcode; CodePipeline tự động deploy.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này không đáp ứng keyword <mark>serverless</mark> nên không thỏa yêu cầu.</li>
-<li><strong>C:</strong> Phương án này không đáp ứng keyword <mark>serverless</mark> nên không thỏa yêu cầu.</li>
-<li><strong>D:</strong> Phương án này không đáp ứng keyword <mark>serverless</mark> nên không thỏa yêu cầu.</li>
+<li><strong>A:</strong> Dùng KMS trực tiếp và CodeDeploy không hiệu quả hơn env vars cho Lambda.</li>
+<li><strong>C:</strong> Tagging không đủ để hạn chế quyền truy cập <mark>production</mark>.</li>
+<li><strong>D:</strong> Tagging + env vars không tách biệt môi trường an toàn.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 61%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="27 votes." title="">B (61%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 32%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="14 votes." title="">D (32%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 7%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">7%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
