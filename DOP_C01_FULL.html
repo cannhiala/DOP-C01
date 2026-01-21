@@ -7470,12 +7470,12 @@ dataLayer.push({
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> EC2, Application Load Balancer, ALB, permissions</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D sử dụng <mark>AWS CodePipeline</mark>, <mark>AWS CodeBuild</mark>, <mark>AWS CodeDeploy</mark> để đáp ứng <mark>EC2</mark>, <mark>Application Load Balancer</mark>, <mark>ALB</mark>, <mark>permissions</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> Đáp án D kết hợp <mark>AWS CodePipeline</mark> để điều phối, <mark>AWS CodeBuild</mark> để chạy unit test và <mark>AWS CodeDeploy</mark> với <mark>appspec.yml</mark> để dừng/khởi động dịch vụ, đăng ký lại instance với <mark>ALB</mark> và cập nhật <mark>permissions</mark>, đúng các yêu cầu triển khai trên <mark>EC2</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>AWS CodeBuild</mark>, <mark>AWS CodeDeploy</mark>, nhưng không có <mark>AWS CodePipeline</mark> như đáp án đúng để đáp ứng <mark>EC2</mark>, <mark>Application Load Balancer</mark>, <mark>ALB</mark>, <mark>permissions</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>AWS CodePipeline</mark>, <mark>AWS CodeCommit</mark>, <mark>AWS CodeDeploy</mark>, nhưng không có <mark>AWS CodeBuild</mark> như đáp án đúng để đáp ứng <mark>EC2</mark>, <mark>Application Load Balancer</mark>, <mark>ALB</mark>, <mark>permissions</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>AWS CodePipeline</mark>, <mark>AWS CodeCommit</mark>, <mark>AWS CodeDeploy</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>EC2</mark>, <mark>Application Load Balancer</mark>, <mark>ALB</mark>, <mark>permissions</mark>.</li>
+<li><strong>A:</strong> Thiếu <mark>AWS CodePipeline</mark> để tự động hóa chuỗi build/test/deploy; chỉ dùng CodeBuild/CodeDeploy không đáp ứng yêu cầu thay thế bash script toàn bộ quy trình.</li>
+<li><strong>B:</strong> Dùng CodeDeploy để “test” là không phù hợp; unit test nên chạy bằng <mark>AWS CodeBuild</mark> trước khi deploy.</li>
+<li><strong>C:</strong> Gán việc deregister/register <mark>ALB</mark> cho <mark>AWS CodeBuild</mark> là không đúng vai trò; CodeBuild không quản lý traffic shifting như CodeDeploy.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 67%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">D (67%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 33%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">B (33%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -7574,14 +7574,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> role, security, role</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> security, role</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D sử dụng <mark>Amazon EventBridge</mark>, <mark>Amazon CloudWatch Events</mark>, <mark>AWS API</mark> để đáp ứng <mark>role</mark>, <mark>security</mark>, <mark>role</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> Đáp án D dùng <mark>AWS CloudTrail</mark> để ghi nhận API <mark>AssumeRole</mark> và <mark>Amazon EventBridge</mark> để bắt sự kiện gần thời gian thực, kích hoạt <mark>AWS Lambda</mark> gửi <mark>Amazon SNS</mark> thông báo cho đội <mark>security</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>AWS Config</mark>, <mark>Amazon S3</mark>, <mark>Amazon Athena</mark>, nhưng không có <mark>Amazon EventBridge</mark>, <mark>Amazon CloudWatch Events</mark> như đáp án đúng để đáp ứng <mark>role</mark>, <mark>security</mark>, <mark>role</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>Amazon GuardDuty</mark>, nhưng không có <mark>Amazon EventBridge</mark>, <mark>Amazon CloudWatch Events</mark> như đáp án đúng để đáp ứng <mark>role</mark>, <mark>security</mark>, <mark>role</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>Amazon EventBridge</mark>, <mark>Amazon CloudWatch Events</mark>, <mark>AWS Management Console</mark>, nhưng không có <mark>AWS API</mark>, <mark>AWS CloudTrail</mark> như đáp án đúng để đáp ứng <mark>role</mark>, <mark>security</mark>, <mark>role</mark>.</li>
+<li><strong>A:</strong> <mark>AWS Config</mark> + Athena truy vấn log không đáp ứng yêu cầu <mark>near-real-time</mark>.</li>
+<li><strong>B:</strong> <mark>Amazon GuardDuty</mark> không dùng để theo dõi AssumeRole theo thời gian thực.</li>
+<li><strong>C:</strong> Pattern đăng nhập console không bắt sự kiện AssumeRole API.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 70%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="14 votes." title="">D (70%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 30%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">C (30%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -7682,12 +7682,12 @@ dataLayer.push({
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> Amazon EC2</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D sử dụng <mark>AWS Health Amazon CloudWatch Events</mark>, <mark>AWS Systems Manager</mark> để đáp ứng <mark>Amazon EC2</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> Đáp án D dùng sự kiện <mark>AWS Health</mark> cho lịch retirement và <mark>Amazon EventBridge</mark> (CloudWatch Events) kích hoạt <mark>AWS Systems Manager</mark> Automation để stop/start <mark>EC2</mark> đúng lúc retirement được lên lịch.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>Amazon CloudWatch Events</mark>, <mark>AWS Systems Manager</mark>, nhưng không có <mark>AWS Health Amazon CloudWatch Events</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>AWS Config</mark>, nhưng không có <mark>AWS Health Amazon CloudWatch Events</mark>, <mark>AWS Systems Manager</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>Amazon CloudWatch</mark>, nhưng không có <mark>AWS Health Amazon CloudWatch Events</mark>, <mark>AWS Systems Manager</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>.</li>
+<li><strong>A:</strong> Lịch kiểm tra mỗi tuần và hibernate không bám theo sự kiện retirement thực tế.</li>
+<li><strong>B:</strong> <mark>EC2 Auto Recovery</mark> xử lý lỗi phần cứng, không xử lý retirement có lịch.</li>
+<li><strong>C:</strong> Reboot theo giờ cố định không đảm bảo phản ứng đúng lúc retirement.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="5 votes." title="">D (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -7787,14 +7787,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> AWS</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> (unattached) EBS volumes, 14 days</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C sử dụng <mark>Amazon CloudWatch Events</mark>, <mark>AWS Lambda</mark> để đáp ứng <mark>AWS</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> Đáp án C dùng <mark>Amazon EventBridge</mark> chạy hàng ngày và <mark>AWS Lambda</mark> gắn tag thời điểm detach rồi xóa volume >14 ngày, đúng yêu cầu tự động xóa EBS unattached theo thời gian.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>AWS Config</mark>, <mark>Amazon EC2</mark>, <mark>Amazon CloudWatch Events</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>AWS</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>Amazon EC2</mark>, <mark>Amazon Data Lifecycle Manager</mark>, nhưng không có <mark>Amazon CloudWatch Events</mark>, <mark>AWS Lambda</mark> như đáp án đúng để đáp ứng <mark>AWS</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>AWS Trusted Advisor</mark>, <mark>AWS Lambda</mark>, nhưng không có <mark>Amazon CloudWatch Events</mark> như đáp án đúng để đáp ứng <mark>AWS</mark>.</li>
+<li><strong>A:</strong> <mark>AWS Config</mark> chỉ phát hiện trạng thái, không theo dõi đủ 14 ngày và không tự xóa theo tuổi.</li>
+<li><strong>B:</strong> <mark>EC2 Data Lifecycle Manager</mark> không quản lý xóa volume unattached theo tuổi.</li>
+<li><strong>D:</strong> <mark>AWS Trusted Advisor</mark> chỉ gợi ý; chụp snapshot rồi xóa không đáp ứng yêu cầu xóa tự động theo 14 ngày.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 71%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="15 votes." title="">C (71%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 24%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="5 votes." title="">B (24%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 5%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">5%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
@@ -7914,15 +7914,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> security, Amazon EC2, security, security, AWS Lambda</p>
-<p><strong>Đáp án:</strong> </p>
-<p><strong>Vì sao đúng:</strong> Đáp án  sử dụng <mark>dịch vụ AWS phù hợp</mark> để đáp ứng <mark>security</mark>, <mark>Amazon EC2</mark>, <mark>security</mark>, <mark>security</mark>, <mark>AWS Lambda</mark>, nên phù hợp với yêu cầu của đề.</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> security, Amazon EC2, AWS Lambda</p>
+<p><strong>Đáp án:</strong> BCE</p>
+<p><strong>Vì sao đúng:</strong> Cần <mark>Lambda</mark> ở account quản lý giả mạo (assume) role của các account con: (B) thiết lập trust để account quản lý assume role ở account con, (C) role ở account con có <mark>AmazonEC2ReadOnlyAccess</mark>, và (E) role ở account quản lý có quyền <mark>sts:AssumeRole</mark> vào role của account con.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>cách triển khai khác</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>security</mark>, <mark>Amazon EC2</mark>, <mark>security</mark>, <mark>security</mark>, <mark>AWS Lambda</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>cách triển khai khác</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>security</mark>, <mark>Amazon EC2</mark>, <mark>security</mark>, <mark>security</mark>, <mark>AWS Lambda</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>cách triển khai khác</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>security</mark>, <mark>Amazon EC2</mark>, <mark>security</mark>, <mark>security</mark>, <mark>AWS Lambda</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>cách triển khai khác</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>security</mark>, <mark>Amazon EC2</mark>, <mark>security</mark>, <mark>security</mark>, <mark>AWS Lambda</mark>.</li>
+<li><strong>A:</strong> Cho user ở account con assume role account quản lý là hướng ngược, không phục vụ Lambda ở account quản lý.</li>
+<li><strong>D:</strong> Cho role ở account con assume role account quản lý không giúp truy vấn <mark>EC2</mark> ở account con.</li>
+<li><strong>F:</strong> Chỉ có quyền <mark>EC2ReadOnly</mark> ở account quản lý, thiếu cross-account assume role.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 89%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="8 votes." title="">BCE (89%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 11%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">11%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -8025,14 +8024,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> Amazon EC2, Auto Scaling, private, monitoring, monitoring, alerts, monitoring</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> Amazon EC2, Auto Scaling, private, monitoring, alerts</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C sử dụng <mark>Amazon CloudWatch Events</mark>, <mark>AWS Lambda</mark> để đáp ứng <mark>Amazon EC2</mark>, <mark>Auto Scaling</mark>, <mark>private</mark>, <mark>monitoring</mark>, <mark>monitoring</mark>, <mark>alerts</mark>, <mark>monitoring</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> Đáp án C dùng <mark>Auto Scaling lifecycle hook</mark> + <mark>Amazon EventBridge</mark> kích hoạt <mark>AWS Lambda</mark> để xóa <mark>private</mark> IP khỏi hệ thống <mark>monitoring</mark> khi instance terminate, tránh <mark>alerts</mark> giả trong quá trình thay thế.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>Amazon CloudWatch Events</mark>, <mark>AWS Lambda</mark>, <mark>Amazon SNS</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>Auto Scaling</mark>, <mark>private</mark>, <mark>monitoring</mark>, <mark>monitoring</mark>, <mark>alerts</mark>, <mark>monitoring</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>AWS Lambda</mark>, nhưng không có <mark>Amazon CloudWatch Events</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>Auto Scaling</mark>, <mark>private</mark>, <mark>monitoring</mark>, <mark>monitoring</mark>, <mark>alerts</mark>, <mark>monitoring</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>AWS Lambda</mark>, nhưng không có <mark>Amazon CloudWatch Events</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>Auto Scaling</mark>, <mark>private</mark>, <mark>monitoring</mark>, <mark>monitoring</mark>, <mark>alerts</mark>, <mark>monitoring</mark>.</li>
+<li><strong>A:</strong> Chỉ gửi thông báo qua <mark>Amazon SNS</mark>, không xóa IP khỏi hệ thống monitoring.</li>
+<li><strong>B:</strong> Thiếu cơ chế sự kiện để chắc chắn Lambda chạy đúng thời điểm termination.</li>
+<li><strong>D:</strong> Không có lifecycle hook nên không đảm bảo xử lý trước khi instance bị xóa.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="5 votes." title="">C (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -8132,14 +8131,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> AWS Elastic Beanstalk, Amazon EC2, traffic</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> Elastic Beanstalk, asynchronous tasks</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Đáp án B sử dụng <mark>Amazon SQS</mark> để đáp ứng <mark>AWS Elastic Beanstalk</mark>, <mark>Amazon EC2</mark>, <mark>traffic</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> Đáp án B dùng <mark>Elastic Beanstalk worker tier</mark> với <mark>Amazon SQS</mark> tích hợp sẵn và <mark>cron.yaml</mark> cho tác vụ định kỳ, phù hợp yêu cầu tách tác vụ dài và xử lý bất đồng bộ nhanh nhất.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>Amazon SQS</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>AWS Elastic Beanstalk</mark>, <mark>Amazon EC2</mark>, <mark>traffic</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>Amazon SQS</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>AWS Elastic Beanstalk</mark>, <mark>Amazon EC2</mark>, <mark>traffic</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>Amazon SQS</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>AWS Elastic Beanstalk</mark>, <mark>Amazon EC2</mark>, <mark>traffic</mark>.</li>
+<li><strong>A:</strong> Tự quản lý fleet EC2 + SQS mất thời gian triển khai, kém tích hợp với Beanstalk.</li>
+<li><strong>C:</strong> Web tier không phù hợp cho worker; SQS auto-generated gắn với worker tier chứ không phải web tier.</li>
+<li><strong>D:</strong> Tự dựng ASG và cài đặt bằng UserData phức tạp, không “time‑efficient”.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -8241,12 +8240,12 @@ dataLayer.push({
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> on-premises, blue/green</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D sử dụng <mark>AWS Elastic Beanstalk</mark>, <mark>Amazon S3</mark> để đáp ứng <mark>on-premises</mark>, <mark>blue/green</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> <mark>AWS Elastic Beanstalk</mark> hỗ trợ <mark>blue/green</mark> và A/B testing thông qua swap CNAME/traffic splitting, triển khai nhanh từ <mark>Amazon S3</mark> cho ứng dụng chuyển từ on-premises.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>Amazon EC2</mark>, nhưng không có <mark>AWS Elastic Beanstalk</mark>, <mark>Amazon S3</mark> như đáp án đúng để đáp ứng <mark>on-premises</mark>, <mark>blue/green</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>Amazon Lightsail</mark>, <mark>Amazon S3</mark>, nhưng không có <mark>AWS Elastic Beanstalk</mark> như đáp án đúng để đáp ứng <mark>on-premises</mark>, <mark>blue/green</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>AWS CodeArtifact</mark>, <mark>AWS CodeDeploy</mark>, <mark>Amazon EC2</mark>, nhưng không có <mark>AWS Elastic Beanstalk</mark>, <mark>Amazon S3</mark> như đáp án đúng để đáp ứng <mark>on-premises</mark>, <mark>blue/green</mark>.</li>
+<li><strong>A:</strong> AMI refresh/ASG không cung cấp blue/green hoặc A/B testing.</li>
+<li><strong>B:</strong> <mark>Amazon Lightsail</mark> không có cơ chế blue/green/A-B mạnh mẽ.</li>
+<li><strong>C:</strong> <mark>AWS CodeDeploy</mark> với CodeArtifact không nêu cơ chế A/B testing cho traffic.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 83%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="10 votes." title="">D (83%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 17%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">A (17%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -8347,12 +8346,12 @@ dataLayer.push({
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> Amazon EC2, Application Load Balancer, ALB, AWS CodeDeploy, logs</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C sử dụng <mark>dịch vụ AWS phù hợp</mark> để đáp ứng <mark>Amazon EC2</mark>, <mark>Application Load Balancer</mark>, <mark>ALB</mark>, <mark>AWS CodeDeploy</mark>, <mark>logs</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> AllowTraffic phụ thuộc <mark>ALB target group</mark> health check; nếu health check sai cấu hình, CodeDeploy sẽ không chuyển traffic và log triển khai có thể không chỉ rõ nguyên nhân chi tiết.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>cách triển khai khác</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>Application Load Balancer</mark>, <mark>ALB</mark>, <mark>AWS CodeDeploy</mark>, <mark>logs</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>cách triển khai khác</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>Application Load Balancer</mark>, <mark>ALB</mark>, <mark>AWS CodeDeploy</mark>, <mark>logs</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>cách triển khai khác</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>Application Load Balancer</mark>, <mark>ALB</mark>, <mark>AWS CodeDeploy</mark>, <mark>logs</mark>.</li>
+<li><strong>A:</strong> Lỗi script trong hook sẽ được ghi rõ trong log CodeDeploy.</li>
+<li><strong>B:</strong> Thiếu quyền ALB thường gây lỗi ngay khi thao tác đăng ký/cho phép traffic.</li>
+<li><strong>D:</strong> Thiếu CodeDeploy agent sẽ làm deploy thất bại trước AllowTraffic.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">C (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -8452,14 +8451,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> Amazon S3</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> Amazon S3, branching, test environment</p>
 <p><strong>Đáp án:</strong> A</p>
-<p><strong>Vì sao đúng:</strong> Đáp án A sử dụng <mark>AWS CodeCommit</mark> để đáp ứng <mark>Amazon S3</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> Dùng <mark>AWS CodeCommit</mark> với branch chính và branch test giúp quản lý xung đột code, hỗ trợ pull request và tự động triển khai theo từng nhánh.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> Phương án này dùng <mark>AWS Lambda</mark>, nhưng không có <mark>AWS CodeCommit</mark> như đáp án đúng để đáp ứng <mark>Amazon S3</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>AWS CodeCommit</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon S3</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>cách triển khai khác</mark>, nhưng không có <mark>AWS CodeCommit</mark> như đáp án đúng để đáp ứng <mark>Amazon S3</mark>.</li>
+<li><strong>B:</strong> Dùng nhiều bucket <mark>Amazon S3</mark> không giải quyết xung đột code và kiểm soát phiên bản.</li>
+<li><strong>C:</strong> Một branch cho cả test/prod không đáp ứng yêu cầu tách môi trường.</li>
+<li><strong>D:</strong> S3 không hỗ trợ branching như Git.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 86%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="12 votes." title="">A (86%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 14%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">14%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -8564,12 +8563,12 @@ dataLayer.push({
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> Amazon SNS</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Đáp án B sử dụng <mark>Amazon Simple Queue Service</mark>, <mark>Amazon SQS</mark>, <mark>Amazon CloudWatch</mark> để đáp ứng <mark>Amazon SNS</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> Đáp án B đặt <mark>redrive policy</mark> cho subscription HTTP của <mark>Amazon SNS</mark> và gửi thông báo vào <mark>Amazon SQS</mark> DLQ; CloudWatch alarm sẽ báo khi có message thất bại.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>Amazon Simple Queue Service</mark>, <mark>Amazon SQS</mark>, <mark>Amazon CloudWatch</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon SNS</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>cách triển khai khác</mark>, nhưng không có <mark>Amazon Simple Queue Service</mark>, <mark>Amazon SQS</mark> như đáp án đúng để đáp ứng <mark>Amazon SNS</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>cách triển khai khác</mark>, nhưng không có <mark>Amazon Simple Queue Service</mark>, <mark>Amazon SQS</mark> như đáp án đúng để đáp ứng <mark>Amazon SNS</mark>.</li>
+<li><strong>A:</strong> Redrive policy phải cấu hình trên subscription, không phải ở topic.</li>
+<li><strong>C:</strong> Delivery policy chỉ retry, không tạo DLQ và không có tín hiệu rõ ràng khi thất bại.</li>
+<li><strong>D:</strong> Retry ở subscription vẫn không cung cấp DLQ/notification khi hết retry.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="7 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -8671,12 +8670,12 @@ dataLayer.push({
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> AWS CodeBuild, Security</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C sử dụng <mark>AWS Systems Manager Parameter Store</mark> để đáp ứng <mark>AWS CodeBuild</mark>, <mark>Security</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> <mark>AWS Systems Manager Parameter Store</mark> (SecureString) tích hợp trực tiếp với CodeBuild qua <mark>parameter-store</mark>, lưu bí mật an toàn và không để lộ trong buildspec.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>AWS KMS</mark>, nhưng không có <mark>AWS Systems Manager Parameter Store</mark> như đáp án đúng để đáp ứng <mark>AWS CodeBuild</mark>, <mark>Security</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>AWS CloudHSM</mark>, nhưng không có <mark>AWS Systems Manager Parameter Store</mark> như đáp án đúng để đáp ứng <mark>AWS CodeBuild</mark>, <mark>Security</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>AWS Encryption SDK</mark>, nhưng không có <mark>AWS Systems Manager Parameter Store</mark> như đáp án đúng để đáp ứng <mark>AWS CodeBuild</mark>, <mark>Security</mark>.</li>
+<li><strong>A:</strong> Lưu giá trị mã hóa trong buildspec vẫn dễ bị lộ khi chia sẻ file cấu hình.</li>
+<li><strong>B:</strong> <mark>AWS CloudHSM</mark> không cần thiết và không tích hợp trực tiếp với CodeBuild biến môi trường.</li>
+<li><strong>D:</strong> <mark>AWS Encryption SDK</mark> không phải cơ chế secrets chuẩn của CodeBuild.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">C (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -8778,12 +8777,12 @@ dataLayer.push({
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> Amazon S3, Amazon EC2, AWS Lambda, Amazon DynamoDB, traffic</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D sử dụng <mark>AWS Elastic Beanstalk</mark>, <mark>Amazon DynamoDB Auto Scaling</mark>, <mark>Amazon Route</mark> để đáp ứng <mark>Amazon S3</mark>, <mark>Amazon EC2</mark>, <mark>AWS Lambda</mark>, <mark>Amazon DynamoDB</mark>, <mark>traffic</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> <mark>AWS Elastic Beanstalk</mark> với custom AMI giảm thời gian cấu hình, triển khai <mark>Auto Scaling</mark> đa AZ và <mark>ALB</mark> để tăng <mark>traffic</mark>; <mark>DynamoDB Auto Scaling</mark> giúp chịu tải tốt.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>AWS OpsWorks</mark>, <mark>Amazon DynamoDB Auto Scaling</mark>, <mark>Amazon Route</mark>, nhưng không có <mark>AWS Elastic Beanstalk</mark> như đáp án đúng để đáp ứng <mark>Amazon S3</mark>, <mark>Amazon EC2</mark>, <mark>AWS Lambda</mark>, <mark>Amazon DynamoDB</mark>, <mark>traffic</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>Amazon DynamoDB</mark>, <mark>Amazon Route</mark>, nhưng không có <mark>AWS Elastic Beanstalk</mark>, <mark>Amazon DynamoDB Auto Scaling</mark> như đáp án đúng để đáp ứng <mark>Amazon S3</mark>, <mark>Amazon EC2</mark>, <mark>AWS Lambda</mark>, <mark>Amazon DynamoDB</mark>, <mark>traffic</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>Amazon CloudFront</mark>, <mark>Amazon S3</mark>, <mark>Amazon DynamoDB Auto Scaling</mark>, nhưng không có <mark>AWS Elastic Beanstalk</mark> như đáp án đúng để đáp ứng <mark>Amazon S3</mark>, <mark>Amazon EC2</mark>, <mark>AWS Lambda</mark>, <mark>Amazon DynamoDB</mark>, <mark>traffic</mark>.</li>
+<li><strong>A:</strong> <mark>AWS OpsWorks</mark> vẫn cần cấu hình instance mỗi lần scale, không giảm thời gian 20 phút.</li>
+<li><strong>B:</strong> Chỉ tăng capacity tĩnh, không tối ưu resiliency và thời gian cấu hình.</li>
+<li><strong>C:</strong> <mark>CloudFront</mark> + <mark>S3</mark> không giải quyết việc cấu hình EC2 web tier động.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">D (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -8883,14 +8882,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> Amazon EC2, security, security, security</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> Amazon EC2, security</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C sử dụng <mark>AWS Config</mark>, <mark>Amazon Simple Notification Service</mark>, <mark>Amazon SNS</mark> để đáp ứng <mark>Amazon EC2</mark>, <mark>security</mark>, <mark>security</mark>, <mark>security</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> <mark>AWS Config</mark> với managed rule <mark>restricted-ssh</mark> kiểm tra SG mở SSH 0.0.0.0/0 và có thể gửi <mark>Amazon SNS</mark> khi vi phạm, đúng yêu cầu giám sát thay đổi.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>Amazon EventBridge</mark>, <mark>Amazon CloudWatch Events</mark>, <mark>Amazon Simple Notification Service</mark>, nhưng không có <mark>AWS Config</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>security</mark>, <mark>security</mark>, <mark>security</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>Amazon GuardDuty</mark>, <mark>AWS Security Hub</mark>, <mark>Amazon EventBridge</mark>, nhưng không có <mark>AWS Config</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>security</mark>, <mark>security</mark>, <mark>security</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>Amazon Inspector</mark>, <mark>Amazon Simple Notification Service</mark>, <mark>Amazon SNS</mark>, nhưng không có <mark>AWS Config</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>security</mark>, <mark>security</mark>, <mark>security</mark>.</li>
+<li><strong>A:</strong> EventBridge bắt API call nhưng không kiểm soát trạng thái tuân thủ liên tục.</li>
+<li><strong>B:</strong> <mark>GuardDuty</mark>/<mark>Security Hub</mark> không chuyên theo dõi cấu hình SG cho SSH.</li>
+<li><strong>D:</strong> <mark>Amazon Inspector</mark> đánh giá lỗ hổng host, không giám sát rule SG.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 62%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="18 votes." title="">C (62%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 38%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="11 votes." title="">A (38%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -8989,14 +8988,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> AWS, AWS</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> AWS Organizations, golden image</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Đáp án B sử dụng <mark>Amazon EC2 Image Builder</mark>, <mark>AWS Resource Access Manager</mark> để đáp ứng <mark>AWS</mark>, <mark>AWS</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> <mark>EC2 Image Builder</mark> tự động hóa tạo golden AMI và cài <mark>Chef</mark>; <mark>AWS Resource Access Manager</mark> giúp chia sẻ AMI cho các account con với ít vận hành nhất.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>Amazon EC2</mark>, nhưng không có <mark>Amazon EC2 Image Builder</mark>, <mark>AWS Resource Access Manager</mark> như đáp án đúng để đáp ứng <mark>AWS</mark>, <mark>AWS</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>AWS Systems Manager Automation</mark>, <mark>AWS Organizations</mark>, nhưng không có <mark>Amazon EC2 Image Builder</mark>, <mark>AWS Resource Access Manager</mark> như đáp án đúng để đáp ứng <mark>AWS</mark>, <mark>AWS</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>Amazon EC2 Image Builder</mark>, <mark>AWS Systems Manager Parameter Store</mark>, nhưng không có <mark>AWS Resource Access Manager</mark> như đáp án đúng để đáp ứng <mark>AWS</mark>, <mark>AWS</mark>.</li>
+<li><strong>A:</strong> Script thủ công làm tăng quản trị và rủi ro lỗi.</li>
+<li><strong>C:</strong> SSM Automation + Organizations không cung cấp pipeline tạo/ phân phối AMI chuẩn hóa.</li>
+<li><strong>D:</strong> Parameter Store chỉ lưu AMI ID, không chia sẻ AMI giữa account.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 80%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="20 votes." title="">B (80%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 12%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">12%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 8%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">8%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
@@ -9098,14 +9097,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> Amazon EC2, Amazon EC2, Auto Scaling, Availability Zones</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> Amazon EC2, Auto Scaling, Availability Zones</p>
 <p><strong>Đáp án:</strong> A</p>
-<p><strong>Vì sao đúng:</strong> Đáp án A sử dụng <mark>dịch vụ AWS phù hợp</mark> để đáp ứng <mark>Amazon EC2</mark>, <mark>Amazon EC2</mark>, <mark>Auto Scaling</mark>, <mark>Availability Zones</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> Kết hợp <mark>target tracking</mark> cho CPU và <mark>scheduled action</mark> tăng capacity trước giờ cao điểm xử lý spike đột ngột, tối ưu chi phí ngoài giờ.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> Phương án này dùng <mark>Amazon EC2 Auto Scaling</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>Amazon EC2</mark>, <mark>Auto Scaling</mark>, <mark>Availability Zones</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>AWS Application Auto Scaling</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>Amazon EC2</mark>, <mark>Auto Scaling</mark>, <mark>Availability Zones</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>AWS Application Auto Scaling</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>Amazon EC2</mark>, <mark>Auto Scaling</mark>, <mark>Availability Zones</mark>.</li>
+<li><strong>B:</strong> Bật/tắt số lượng lớn instance cố định gây lãng phí và rủi ro thiếu tải.</li>
+<li><strong>C:</strong> <mark>Application Auto Scaling</mark> không áp dụng cho EC2 ASG ở đây và cấu hình rườm rà.</li>
+<li><strong>D:</strong> Chỉ terminate theo lịch dễ gây thiếu capacity khi spike.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 83%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="15 votes." title="">A (83%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 17%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">C (17%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -9204,14 +9203,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> serverless, serverless, AWS CodeCommit, Amazon Route 53, public</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> serverless, AWS CodeCommit, Amazon Route 53, public</p>
 <p><strong>Đáp án:</strong> A</p>
-<p><strong>Vì sao đúng:</strong> Đáp án A sử dụng <mark>AWS Amplify</mark> để đáp ứng <mark>serverless</mark>, <mark>serverless</mark>, <mark>AWS CodeCommit</mark>, <mark>Amazon Route 53</mark>, <mark>public</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> <mark>AWS Amplify</mark> hỗ trợ CI/CD theo nhánh từ <mark>CodeCommit</mark>, tự tạo môi trường theo branch và tự tạo subdomain trong <mark>Route 53</mark>, phù hợp ứng dụng <mark>serverless</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> Phương án này dùng <mark>AWS CodePipeline</mark>, <mark>AWS Lambda</mark>, nhưng không có <mark>AWS Amplify</mark> như đáp án đúng để đáp ứng <mark>serverless</mark>, <mark>serverless</mark>, <mark>AWS CodeCommit</mark>, <mark>Amazon Route 53</mark>, <mark>public</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>AWS Elastic Beanstalk</mark>, nhưng không có <mark>AWS Amplify</mark> như đáp án đúng để đáp ứng <mark>serverless</mark>, <mark>serverless</mark>, <mark>AWS CodeCommit</mark>, <mark>Amazon Route 53</mark>, <mark>public</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>AWS CodePipeline</mark>, <mark>AWS CodeDeploy</mark>, nhưng không có <mark>AWS Amplify</mark> như đáp án đúng để đáp ứng <mark>serverless</mark>, <mark>serverless</mark>, <mark>AWS CodeCommit</mark>, <mark>Amazon Route 53</mark>, <mark>public</mark>.</li>
+<li><strong>B:</strong> Tự viết Lambda + pipeline phức tạp, không tối ưu cho serverless SPA.</li>
+<li><strong>C:</strong> <mark>Elastic Beanstalk</mark> không phải nền tảng serverless SPA chuẩn.</li>
+<li><strong>D:</strong> <mark>CodeDeploy</mark> không triển khai frontend serverless và không tự tạo subdomain.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="12 votes." title="">A (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -9323,14 +9322,13 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> AWS CodePipeline, security</p>
-<p><strong>Đáp án:</strong> </p>
-<p><strong>Vì sao đúng:</strong> Đáp án  sử dụng <mark>dịch vụ AWS phù hợp</mark> để đáp ứng <mark>AWS CodePipeline</mark>, <mark>security</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Đáp án:</strong> CE</p>
+<p><strong>Vì sao đúng:</strong> (E) dùng <mark>manual approval</mark> trong CodePipeline để ghi nhận phê duyệt của đội <mark>security</mark>; (C) bật <mark>AWS CloudTrail</mark> lưu log vào <mark>Amazon S3</mark> để lưu trữ/audit lịch sử phê duyệt.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>Amazon CloudWatch Logs</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>AWS CodePipeline</mark>, <mark>security</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>Amazon S3</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>AWS CodePipeline</mark>, <mark>security</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>AWS CloudTrail</mark>, <mark>Amazon S3</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>AWS CodePipeline</mark>, <mark>security</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>AWS Lambda</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>AWS CodePipeline</mark>, <mark>security</mark>.</li>
+<li><strong>A:</strong> <mark>CloudWatch Logs</mark> không thay thế audit trail chuẩn cho hành động IAM/CodePipeline.</li>
+<li><strong>B:</strong> Ghi vào S3 cuối mỗi stage không đảm bảo lưu vết phê duyệt của người dùng.</li>
+<li><strong>D:</strong> Custom action Lambda không cần thiết và vẫn thiếu lưu vết audit chuẩn.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">CE (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -9430,14 +9428,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> Amazon EC2, Application Load Balancer, ALB, Availability Zones, Amazon RDS, Route 53, ALB, disaster recovery, RTO, RPO</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> Amazon RDS, Route 53, disaster recovery, RTO, RPO</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D sử dụng <mark>Amazon RDS</mark>, <mark>AWS Region</mark> để đáp ứng <mark>Amazon EC2</mark>, <mark>Application Load Balancer</mark>, <mark>ALB</mark>, <mark>Availability Zones</mark>, <mark>Amazon RDS</mark>, <mark>Route 53</mark>, <mark>ALB</mark>, <mark>disaster recovery</mark>, <mark>RTO</mark>, <mark>RPO</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> Dựng môi trường dự phòng ở <mark>AWS Region</mark> khác, dùng <mark>RDS read replica</mark> để đạt <mark>RPO</mark> 15 phút và <mark>Route 53</mark> failover; khi sự cố, promote replica giúp đạt <mark>RTO</mark> 4 giờ với ít thay đổi.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>Amazon RDS</mark>, nhưng không có <mark>AWS Region</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>Application Load Balancer</mark>, <mark>ALB</mark>, <mark>Availability Zones</mark>, <mark>Amazon RDS</mark>, <mark>Route 53</mark>, <mark>ALB</mark>, <mark>disaster recovery</mark>, <mark>RTO</mark>, <mark>RPO</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>Amazon RDS</mark>, <mark>AWS Region</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>Application Load Balancer</mark>, <mark>ALB</mark>, <mark>Availability Zones</mark>, <mark>Amazon RDS</mark>, <mark>Route 53</mark>, <mark>ALB</mark>, <mark>disaster recovery</mark>, <mark>RTO</mark>, <mark>RPO</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>Amazon RDS</mark>, <mark>AWS Region</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>Application Load Balancer</mark>, <mark>ALB</mark>, <mark>Availability Zones</mark>, <mark>Amazon RDS</mark>, <mark>Route 53</mark>, <mark>ALB</mark>, <mark>disaster recovery</mark>, <mark>RTO</mark>, <mark>RPO</mark>.</li>
+<li><strong>A:</strong> Chỉ khác AZ, không đạt yêu cầu DR cách ly địa lý.</li>
+<li><strong>B:</strong> Latency routing không phải failover DR và không đảm bảo RTO/RPO.</li>
+<li><strong>C:</strong> Snapshot/restore chậm, khó đạt RPO 15 phút.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="7 votes." title="">D (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -9539,12 +9537,12 @@ dataLayer.push({
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> public, security</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D sử dụng <mark>AWS Lambda</mark>, <mark>Amazon EventBridge</mark>, <mark>Amazon CloudWatch Events</mark> để đáp ứng <mark>public</mark>, <mark>security</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> <mark>Trusted Advisor</mark> phát hiện key bị lộ; <mark>Amazon EventBridge</mark> bắt sự kiện "Exposed Access Keys" và kích hoạt <mark>AWS Lambda</mark> xóa key, đồng thời gửi <mark>Amazon SNS</mark> thông báo cho đội <mark>security</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>AWS Lambda</mark>, <mark>AWS CloudTrail</mark>, <mark>Amazon CloudWatch Logs</mark>, nhưng không có <mark>Amazon EventBridge</mark>, <mark>Amazon CloudWatch Events</mark> như đáp án đúng để đáp ứng <mark>public</mark>, <mark>security</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>AWS Lambda</mark>, <mark>AWS Config</mark>, <mark>Amazon Simple Notification Service</mark>, nhưng không có <mark>Amazon EventBridge</mark>, <mark>Amazon CloudWatch Events</mark> như đáp án đúng để đáp ứng <mark>public</mark>, <mark>security</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>AWS Lambda</mark>, <mark>Amazon Simple Notification Service</mark>, <mark>Amazon SNS</mark>, nhưng không có <mark>Amazon EventBridge</mark>, <mark>Amazon CloudWatch Events</mark> như đáp án đúng để đáp ứng <mark>public</mark>, <mark>security</mark>.</li>
+<li><strong>A:</strong> <mark>CloudTrail</mark> không phát sự kiện Trusted Advisor.</li>
+<li><strong>B:</strong> <mark>AWS Config</mark> không theo dõi Trusted Advisor findings theo thời gian thực.</li>
+<li><strong>C:</strong> <mark>Personal Health Dashboard</mark> không thay thế EventBridge cho Trusted Advisor findings.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 86%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="12 votes." title="">D (86%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 14%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">14%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -9649,12 +9647,12 @@ dataLayer.push({
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> public, security</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D sử dụng <mark>AWS Lambda</mark>, <mark>Amazon EventBridge</mark>, <mark>Amazon CloudWatch Events</mark> để đáp ứng <mark>public</mark>, <mark>security</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> <mark>Amazon EventBridge</mark> nhận sự kiện Trusted Advisor "Exposed Access Keys", kích hoạt <mark>AWS Lambda</mark> xóa key và gửi <mark>Amazon SNS</mark> thông báo cho đội <mark>security</mark> ngay lập tức.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>AWS Lambda</mark>, <mark>AWS CloudTrail</mark>, <mark>Amazon CloudWatch Logs</mark>, nhưng không có <mark>Amazon EventBridge</mark>, <mark>Amazon CloudWatch Events</mark> như đáp án đúng để đáp ứng <mark>public</mark>, <mark>security</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>AWS Lambda</mark>, <mark>AWS Config</mark>, <mark>Amazon Simple Notification Service</mark>, nhưng không có <mark>Amazon EventBridge</mark>, <mark>Amazon CloudWatch Events</mark> như đáp án đúng để đáp ứng <mark>public</mark>, <mark>security</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>AWS Lambda</mark>, <mark>Amazon Simple Notification Service</mark>, <mark>Amazon SNS</mark>, nhưng không có <mark>Amazon EventBridge</mark>, <mark>Amazon CloudWatch Events</mark> như đáp án đúng để đáp ứng <mark>public</mark>, <mark>security</mark>.</li>
+<li><strong>A:</strong> Dựa vào <mark>CloudTrail</mark> không bắt được sự kiện Trusted Advisor.</li>
+<li><strong>B:</strong> <mark>AWS Config</mark> không phù hợp cho phản ứng real-time với Trusted Advisor.</li>
+<li><strong>C:</strong> Personal Health Dashboard không phải nguồn sự kiện chính cho Trusted Advisor.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 64%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="7 votes." title="">D (64%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 36%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="4 votes." title="">C (36%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -9755,12 +9753,12 @@ dataLayer.push({
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> Amazon Aurora</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C sử dụng <mark>AWS Region</mark> để đáp ứng <mark>Amazon Aurora</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> <mark>Aurora Global Database</mark> cho phép replica ở Region châu Âu với độ trễ thấp và dữ liệu cập nhật gần thời gian thực; người dùng truy vấn qua reader endpoint ở EU.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>Amazon DynamoDB</mark>, nhưng không có <mark>AWS Region</mark> như đáp án đúng để đáp ứng <mark>Amazon Aurora</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>cách triển khai khác</mark>, nhưng không có <mark>AWS Region</mark> như đáp án đúng để đáp ứng <mark>Amazon Aurora</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>Amazon DynamoDB</mark>, <mark>AWS Region</mark>, <mark>AWS Database Migration Service</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon Aurora</mark>.</li>
+<li><strong>A:</strong> Chuyển sang <mark>DynamoDB</mark> và DAX không phù hợp với workload Aurora hiện tại.</li>
+<li><strong>B:</strong> Replica vẫn ở North America, không giải quyết latency cho châu Âu.</li>
+<li><strong>D:</strong> Dùng DMS + DynamoDB phức tạp và thay đổi kiến trúc không cần thiết.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="11 votes." title="">C (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -9860,14 +9858,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> security, Amazon S3, Auto Scaling, Amazon EC2, Elastic Load Balancer, Amazon RDS, AWS Lambda, security, encryption, monitoring</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> security, encryption, monitoring</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Đáp án D sử dụng <mark>AWS Config</mark> để đáp ứng <mark>security</mark>, <mark>Amazon S3</mark>, <mark>Auto Scaling</mark>, <mark>Amazon EC2</mark>, <mark>Elastic Load Balancer</mark>, <mark>Amazon RDS</mark>, <mark>AWS Lambda</mark>, <mark>security</mark>, <mark>encryption</mark>, <mark>monitoring</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> Đáp án D bật <mark>SSE</mark> cho <mark>Amazon S3</mark>/<mark>EBS</mark>/<mark>Amazon RDS</mark> và dùng <mark>AWS Config</mark> giám sát tuân thủ, đáp ứng yêu cầu <mark>encryption</mark> at rest với ít vận hành nhất và có <mark>monitoring</mark> lâu dài.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>Amazon Inspector</mark>, <mark>AWS Config</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>security</mark>, <mark>Amazon S3</mark>, <mark>Auto Scaling</mark>, <mark>Amazon EC2</mark>, <mark>Elastic Load Balancer</mark>, <mark>Amazon RDS</mark>, <mark>AWS Lambda</mark>, <mark>security</mark>, <mark>encryption</mark>, <mark>monitoring</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>Amazon S3</mark>, <mark>Amazon SNS</mark>, <mark>AWS Lambda</mark>, nhưng không có <mark>AWS Config</mark> như đáp án đúng để đáp ứng <mark>security</mark>, <mark>Amazon S3</mark>, <mark>Auto Scaling</mark>, <mark>Amazon EC2</mark>, <mark>Elastic Load Balancer</mark>, <mark>Amazon RDS</mark>, <mark>AWS Lambda</mark>, <mark>security</mark>, <mark>encryption</mark>, <mark>monitoring</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>AWS Lambda</mark>, <mark>Amazon Inspector</mark>, nhưng không có <mark>AWS Config</mark> như đáp án đúng để đáp ứng <mark>security</mark>, <mark>Amazon S3</mark>, <mark>Auto Scaling</mark>, <mark>Amazon EC2</mark>, <mark>Elastic Load Balancer</mark>, <mark>Amazon RDS</mark>, <mark>AWS Lambda</mark>, <mark>security</mark>, <mark>encryption</mark>, <mark>monitoring</mark>.</li>
+<li><strong>A:</strong> <mark>Amazon Inspector</mark> không kiểm tra mã hóa at rest; giám sát không đầy đủ.</li>
+<li><strong>B:</strong> Mã hóa ở ứng dụng/cron jobs tăng vận hành và không có kiểm soát trung tâm.</li>
+<li><strong>C:</strong> SSL là mã hóa in-transit, không giải quyết mã hóa at rest.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">D (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -9990,14 +9988,13 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> Amazon RDS, high availability</p>
-<p><strong>Đáp án:</strong> </p>
-<p><strong>Vì sao đúng:</strong> Đáp án  sử dụng <mark>dịch vụ AWS phù hợp</mark> để đáp ứng <mark>Amazon RDS</mark>, <mark>high availability</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Đáp án:</strong> BCE</p>
+<p><strong>Vì sao đúng:</strong> (B) đặt <mark>Amazon RDS</mark> ngoài Elastic Beanstalk để dữ liệu bền vững và HA độc lập; (C) cấu hình thông báo thất bại triển khai; (E) <mark>immutable deployment</mark> hỗ trợ rollback tự động và hạn chế downtime.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>AWS Elastic Beanstalk</mark>, <mark>Amazon RDS</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon RDS</mark>, <mark>high availability</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>AWS Elastic Beanstalk</mark>, <mark>Amazon RDS</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon RDS</mark>, <mark>high availability</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>AWS Elastic Beanstalk</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon RDS</mark>, <mark>high availability</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>Amazon EventBridge</mark>, <mark>Amazon CloudWatch Events</mark>, <mark>AWS Health</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon RDS</mark>, <mark>high availability</mark>.</li>
+<li><strong>A:</strong> RDS gắn vào Beanstalk có thể bị xóa khi môi trường bị hủy.</li>
+<li><strong>D:</strong> AWS Health events không phản ánh lỗi triển khai ứng dụng.</li>
+<li><strong>F:</strong> Rolling deployment không đảm bảo rollback tự động như immutable.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 53%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="31 votes." title="">BCE (53%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 42%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="25 votes." title="">BDE (42%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 5%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3%" title="">3%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
@@ -10095,14 +10092,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> AWS</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> AWS, half of instances available, auto healing</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C sử dụng <mark>AWS CodeDeploy</mark> để đáp ứng <mark>AWS</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> <mark>AWS CodeDeploy</mark> với <mark>CodeDeployDefault.HalfAtATime</mark> đảm bảo luôn giữ 50% instance phục vụ, kết hợp <mark>Auto Scaling</mark> + <mark>ELB health check</mark> cho auto healing và chi phí tối ưu.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>AWS Elastic Beanstalk</mark>, nhưng không có <mark>AWS CodeDeploy</mark> như đáp án đúng để đáp ứng <mark>AWS</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>AWS OpsWorks</mark>, nhưng không có <mark>AWS CodeDeploy</mark> như đáp án đúng để đáp ứng <mark>AWS</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>AWS CodeDeploy</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>AWS</mark>.</li>
+<li><strong>A:</strong> Elastic Beanstalk rolling 50% có thể đáp ứng nhưng không nêu health check/auto healing theo yêu cầu.</li>
+<li><strong>B:</strong> OpsWorks cần quản trị nhiều hơn, không tối ưu chi phí.</li>
+<li><strong>D:</strong> Blue/green cần gấp đôi capacity, chi phí cao hơn yêu cầu.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 51%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="21 votes." title="">C (51%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 49%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="20 votes." title="">A (49%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -10207,12 +10204,12 @@ dataLayer.push({
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> AWS CodePipeline, Amazon CloudWatch</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Đáp án B sử dụng <mark>dịch vụ AWS phù hợp</mark> để đáp ứng <mark>AWS CodePipeline</mark>, <mark>Amazon CloudWatch</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> Pattern sự kiện trong hình lọc theo <mark>approval</mark> với trạng thái <mark>Rejected/Failed</mark>, nên chỉ khớp các sự kiện phê duyệt bị từ chối hoặc thất bại trên mọi pipeline.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>cách triển khai khác</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>AWS CodePipeline</mark>, <mark>Amazon CloudWatch</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>cách triển khai khác</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>AWS CodePipeline</mark>, <mark>Amazon CloudWatch</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>cách triển khai khác</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>AWS CodePipeline</mark>, <mark>Amazon CloudWatch</mark>.</li>
+<li><strong>A:</strong> Build/deploy failure không khớp trường approval trong pattern.</li>
+<li><strong>C:</strong> Pattern không chọn tất cả sự kiện, chỉ approval state fail/reject.</li>
+<li><strong>D:</strong> Approval action chung chung không đủ điều kiện fail/reject.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="9 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -10312,14 +10309,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> on-premises</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> on-premises, scale, no downtime</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Đáp án C sử dụng <mark>AWS Elastic Beanstalk</mark>, <mark>AWS CodeBuild</mark>, <mark>Amazon RDS</mark> để đáp ứng <mark>on-premises</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> <mark>Elastic Beanstalk</mark> + <mark>CodeBuild</mark> tự động build/test, triển khai môi trường test/prod riêng và dùng <mark>swap CNAME</mark> để zero-downtime; <mark>Amazon RDS</mark> đảm bảo dữ liệu bền vững và scale.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>Amazon Lightsail</mark>, <mark>AWS CLI</mark>, nhưng không có <mark>AWS Elastic Beanstalk</mark>, <mark>AWS CodeBuild</mark> như đáp án đúng để đáp ứng <mark>on-premises</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>AWS CloudFormation</mark>, <mark>Amazon EC2</mark>, <mark>Amazon EBS</mark>, nhưng không có <mark>AWS Elastic Beanstalk</mark>, <mark>Amazon RDS</mark> như đáp án đúng để đáp ứng <mark>on-premises</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>Amazon DynamoDB</mark>, <mark>AWS OpsWorks</mark>, <mark>Amazon EC2</mark>, nhưng không có <mark>AWS Elastic Beanstalk</mark>, <mark>AWS CodeBuild</mark> như đáp án đúng để đáp ứng <mark>on-premises</mark>.</li>
+<li><strong>A:</strong> <mark>Lightsail</mark> không hỗ trợ autoscaling và zero-downtime tốt.</li>
+<li><strong>B:</strong> Tự dựng EC2/MySQL trên instance tăng vận hành và khó scale.</li>
+<li><strong>D:</strong> Yêu cầu đổi sang <mark>DynamoDB</mark> và OpsWorks, tốn thời gian và thay đổi lớn.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="11 votes." title="">C (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -10421,12 +10418,12 @@ dataLayer.push({
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> Amazon EC2, logs</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Đáp án B sử dụng <mark>Amazon CloudWatch</mark>, <mark>Amazon CloudWatch Logs</mark>, <mark>AWS CloudTrail</mark> để đáp ứng <mark>Amazon EC2</mark>, <mark>logs</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> <mark>CloudWatch Logs</mark> nhận log ứng dụng từ EC2 và <mark>CloudTrail</mark> gửi API activity vào Logs; <mark>Logs Insights</mark> truy vấn được cả hai loại log ngay trong CloudWatch.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>Amazon CloudWatch</mark>, <mark>Amazon CloudWatch Logs</mark>, <mark>AWS CloudTrail</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>logs</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>Amazon CloudWatch</mark>, <mark>Amazon Kinesis</mark>, <mark>AWS CloudTrail</mark>, nhưng không có <mark>Amazon CloudWatch Logs</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>logs</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>Amazon CloudWatch</mark>, <mark>Amazon S3</mark>, <mark>AWS CloudTrail</mark>, nhưng không có <mark>Amazon CloudWatch Logs</mark> như đáp án đúng để đáp ứng <mark>Amazon EC2</mark>, <mark>logs</mark>.</li>
+<li><strong>A:</strong> API logs nằm ở <mark>Amazon S3</mark>, không thể truy vấn trực tiếp cùng app logs bằng Logs Insights.</li>
+<li><strong>C:</strong> Kinesis/Redshift là quá phức tạp so với yêu cầu đơn giản.</li>
+<li><strong>D:</strong> Athena trên S3 cần pipeline riêng và không nhanh bằng Logs Insights.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 95%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="19 votes." title="">B (95%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 5%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">5%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -10536,15 +10533,14 @@ dataLayer.push({
                                             <br>
                                         </span>
 
-                                        <span class="answer-description"><p><strong>Keywords:</strong> traffic, Application Load Balancer, AWS CodeCommit, AWS Lambda, AWS Systems Manager, Amazon EC2</p>
-<p><strong>Đáp án:</strong> </p>
-<p><strong>Vì sao đúng:</strong> Đáp án  sử dụng <mark>dịch vụ AWS phù hợp</mark> để đáp ứng <mark>traffic</mark>, <mark>Application Load Balancer</mark>, <mark>AWS CodeCommit</mark>, <mark>AWS Lambda</mark>, <mark>AWS Systems Manager</mark>, <mark>Amazon EC2</mark>, nên phù hợp với yêu cầu của đề.</p>
+                                        <span class="answer-description"><p><strong>Keywords:</strong> traffic, Application Load Balancer, AWS CodeCommit, Amazon EC2</p>
+<p><strong>Đáp án:</strong> BC</p>
+<p><strong>Vì sao đúng:</strong> (B) CodePipeline tách build/test tuần tự trước khi deploy giúp giảm lỗi; (C) <mark>AWS CodeDeploy</mark> với deployment group gắn <mark>ALB</mark> hỗ trợ kiểm soát traffic và đồng bộ phiên bản trên <mark>EC2</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>AWS CodePipeline</mark>, <mark>AWS CodeDeploy</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>traffic</mark>, <mark>Application Load Balancer</mark>, <mark>AWS CodeCommit</mark>, <mark>AWS Lambda</mark>, <mark>AWS Systems Manager</mark>, <mark>Amazon EC2</mark>.</li>
-<li><strong>B:</strong> Phương án này dùng <mark>AWS CodePipeline</mark>, <mark>AWS CodeDeploy</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>traffic</mark>, <mark>Application Load Balancer</mark>, <mark>AWS CodeCommit</mark>, <mark>AWS Lambda</mark>, <mark>AWS Systems Manager</mark>, <mark>Amazon EC2</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>AWS CodeDeploy</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>traffic</mark>, <mark>Application Load Balancer</mark>, <mark>AWS CodeCommit</mark>, <mark>AWS Lambda</mark>, <mark>AWS Systems Manager</mark>, <mark>Amazon EC2</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>AWS CodeDeploy</mark>, <mark>AWS Systems Manager</mark>, nhưng không có <mark>các dịch vụ then chốt</mark> như đáp án đúng để đáp ứng <mark>traffic</mark>, <mark>Application Load Balancer</mark>, <mark>AWS CodeCommit</mark>, <mark>AWS Lambda</mark>, <mark>AWS Systems Manager</mark>, <mark>Amazon EC2</mark>.</li>
+<li><strong>A:</strong> Build/test song song không đảm bảo kiểm soát chất lượng theo thứ tự.</li>
+<li><strong>D:</strong> Vẫn dùng Lambda tự dựng quy trình, thiếu cơ chế deployment chuẩn của CodeDeploy.</li>
+<li><strong>E:</strong> Chỉ thay SSM bằng CodeDeploy mà không có pipeline build/test đầy đủ.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="11 votes." title="">BC (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -10646,12 +10642,12 @@ dataLayer.push({
 
                                         <span class="answer-description"><p><strong>Keywords:</strong> private, Amazon ECS, Amazon EC2, AWS Lambda</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Đáp án B sử dụng <mark>AWS CodePipeline</mark>, <mark>AWS CodeDeploy</mark> để đáp ứng <mark>private</mark>, <mark>Amazon ECS</mark>, <mark>Amazon EC2</mark>, <mark>AWS Lambda</mark>, nên phù hợp với yêu cầu của đề.</p>
+<p><strong>Vì sao đúng:</strong> <mark>AWS CodePipeline</mark> tích hợp repo GitHub riêng tư và dùng <mark>AWS CodeDeploy</mark> để triển khai đến <mark>ECS</mark>, <mark>EC2</mark>, <mark>Lambda</mark>, đồng thời hỗ trợ manual approval stage.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Phương án này dùng <mark>AWS CodePipeline</mark>, <mark>Amazon ECS</mark>, <mark>Amazon EC2</mark>, nhưng không có <mark>AWS CodeDeploy</mark> như đáp án đúng để đáp ứng <mark>private</mark>, <mark>Amazon ECS</mark>, <mark>Amazon EC2</mark>, <mark>AWS Lambda</mark>.</li>
-<li><strong>C:</strong> Phương án này dùng <mark>AWS CodePipeline</mark>, <mark>AWS Elastic Beanstalk</mark>, nhưng không có <mark>AWS CodeDeploy</mark> như đáp án đúng để đáp ứng <mark>private</mark>, <mark>Amazon ECS</mark>, <mark>Amazon EC2</mark>, <mark>AWS Lambda</mark>.</li>
-<li><strong>D:</strong> Phương án này dùng <mark>AWS CodeDeploy</mark>, nhưng không có <mark>AWS CodePipeline</mark> như đáp án đúng để đáp ứng <mark>private</mark>, <mark>Amazon ECS</mark>, <mark>Amazon EC2</mark>, <mark>AWS Lambda</mark>.</li>
+<li><strong>A:</strong> CodePipeline không deploy trực tiếp ECS/EC2/Lambda nếu không qua CodeDeploy.</li>
+<li><strong>C:</strong> <mark>Elastic Beanstalk</mark> không triển khai cả ECS và Lambda.</li>
+<li><strong>D:</strong> Chỉ dùng CodeDeploy thiếu pipeline và bước manual approval.</li>
 </ul></span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="7 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
