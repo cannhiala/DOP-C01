@@ -738,12 +738,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> serverless, API Gateway, Lambda, canary, test new features, weighted routing</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> API Gateway supports canary releases tied to Lambda function versions, which fits the serverless deployment and gradual rollout requirement.</p>
+<p><strong>Vì sao đúng:</strong> Dựa vào keywords <mark>serverless</mark>, <mark>API Gateway</mark> và <mark>Lambda</mark>, chiến lược đúng là dùng phiên bản Lambda và canary để thử nghiệm. Keyword <mark>canary</mark> và <mark>test new features</mark> yêu cầu phát hành từng phần trước khi rollout toàn bộ.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Route 53 failover is for disaster recovery, not controlled canary traffic splitting.</li>
-<li><strong>C:</strong> Elastic Beanstalk blue/green targets EC2-based stacks, not native API Gateway/Lambda serverless deployments.</li>
-<li><strong>D:</strong> OpsWorks is not designed for API Gateway/Lambda deployments and adds unnecessary complexity.</li>
+<li><strong>A:</strong> Keyword <mark>weighted routing</mark> ở Route 53 không phải là canary cho API Gateway/Lambda; failover chỉ dùng cho DR.</li>
+<li><strong>C:</strong> Elastic Beanstalk phù hợp EC2, không phù hợp <mark>serverless</mark> API Gateway/Lambda.</li>
+<li><strong>D:</strong> OpsWorks không phải công cụ triển khai API Gateway/Lambda, không khớp keywords.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -869,12 +869,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> single AWS Region, different continent, high latency, ALB, Auto Scaling, DynamoDB, both Regions</p>
 <p><strong>Đáp án:</strong> C, D, F</p>
-<p><strong>Vì sao đúng:</strong> Create a full stack (ALB + ASG) in the new Region and use Route 53 latency-based routing; DynamoDB global tables provide multi-Region low-latency data access.</p>
+<p><strong>Vì sao đúng:</strong> Keywords <mark>high latency</mark> và <mark>different continent</mark> cần triển khai đa vùng: tạo ALB/ASG ở Region mới và dùng Route 53 latency-based. Keyword <mark>DynamoDB</mark> + <mark>both Regions</mark> phù hợp với global tables.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Creating a separate table with replication is extra effort and does not provide active-active latency benefits like global tables.</li>
-<li><strong>B:</strong> ALBs and Auto Scaling groups are regional resources and cannot be created as global resources.</li>
-<li><strong>E:</strong> Failover routing is active-passive and does not optimize latency for users in both Regions.</li>
+<li><strong>A:</strong> Tạo bảng riêng và replication thủ công không tối ưu cho <mark>high latency</mark> như global tables.</li>
+<li><strong>B:</strong> ALB/ASG là tài nguyên regional, không có khái niệm global resources.</li>
+<li><strong>E:</strong> Failover routing là active-passive, không tối ưu cho <mark>both Regions</mark>.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="7 votes." title="">CDF (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -978,12 +978,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> CloudFormation custom resource, CREATE_IN_PROGRESS, Lambda function</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Custom resources must return a response to the pre-signed URL; without it CloudFormation never completes the create step.</p>
+<p><strong>Vì sao đúng:</strong> Custom resource phải trả response về presigned URL; nếu không, trạng thái sẽ kẹt ở <mark>CREATE_IN_PROGRESS</mark> dù <mark>Lambda function</mark> đã chạy.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> A successful Lambda exit alone is not enough; CloudFormation still needs the explicit response.</li>
-<li><strong>C:</strong> UpdateStack permission is not required for signaling a custom resource completion.</li>
-<li><strong>D:</strong> Directory Service permissions are unrelated to the stuck CloudFormation state.</li>
+<li><strong>A:</strong> Lambda exit thành công không đủ; CloudFormation cần phản hồi URL.</li>
+<li><strong>C:</strong> UpdateStack permission không liên quan đến việc hoàn tất custom resource.</li>
+<li><strong>D:</strong> ds:ConnectDirectory không giải quyết việc CloudFormation chờ phản hồi.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="5 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -1098,12 +1098,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> Session Manager, private network only, VPC endpoint</p>
 <p><strong>Đáp án:</strong> B, C</p>
-<p><strong>Vì sao đúng:</strong> Session Manager requires instance permissions and VPC endpoints to keep traffic private without internet access.</p>
+<p><strong>Vì sao đúng:</strong> Keyword <mark>private network only</mark> yêu cầu dùng <mark>VPC endpoint</mark> cho Systems Manager và cần IAM permissions đúng trên instance profile.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Port 22 is for SSH and is not used by Session Manager.</li>
-<li><strong>D:</strong> A bastion host contradicts the goal of removing SSH access.</li>
-<li><strong>E:</strong> Removing default routes does not enable Session Manager without endpoints.</li>
+<li><strong>A:</strong> Port 22 là SSH, không dùng cho <mark>Session Manager</mark>.</li>
+<li><strong>D:</strong> Bastion host đi ngược mục tiêu bỏ SSH.</li>
+<li><strong>E:</strong> Xóa route mặc định không tự tạo đường đi private cho Session Manager.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">BC (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -1229,12 +1229,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> standardize patching, on-premises, non-business hours, Systems Manager</p>
 <p><strong>Đáp án:</strong> A, B, F</p>
-<p><strong>Vì sao đúng:</strong> Hybrid Activations onboard on-premises servers, EC2 needs an instance role, and Maintenance Windows enforce patching during the approved window.</p>
+<p><strong>Vì sao đúng:</strong> <mark>Systems Manager</mark> quản lý cả on-premises qua Hybrid Activations; EC2 cần IAM role; Maintenance Windows đáp ứng <mark>non-business hours</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>C:</strong> Access keys are not required when using Hybrid Activations.</li>
-<li><strong>D:</strong> Hourly automation ignores the non-business-hours requirement.</li>
-<li><strong>E:</strong> CloudWatch Events alone does not provide the managed patch window controls.</li>
+<li><strong>C:</strong> Access keys không cần khi dùng Hybrid Activations.</li>
+<li><strong>D:</strong> Chạy mỗi giờ không tuân thủ <mark>non-business hours</mark>.</li>
+<li><strong>E:</strong> CloudWatch Events không đủ để quản lý patch windows chuẩn.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">ABF (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -1342,12 +1342,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> centralized control, consistent and automatic delivery pipeline, few maintenance tasks</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Containerizing each app and deploying to ECS on Fargate minimizes infrastructure management while keeping consistent CI/CD per app.</p>
+<p><strong>Vì sao đúng:</strong> Dùng ECS Fargate giảm vận hành hạ tầng (<mark>few maintenance tasks</mark>), mỗi app có repo riêng để <mark>centralized control</mark> và pipeline nhất quán.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Single repo with branches and a centralized server increases coupling and operational overhead.</li>
-<li><strong>B:</strong> Centralized server deployments still require OS maintenance and do not scale well across stacks.</li>
-<li><strong>C:</strong> Building AMIs and EC2 fleets increases maintenance and slows deployments.</li>
+<li><strong>A:</strong> Một repo nhiều nhánh làm khó kiểm soát và tăng vận hành.</li>
+<li><strong>B:</strong> Deploy lên server trung tâm vẫn phải bảo trì OS.</li>
+<li><strong>C:</strong> AMI/EC2 fleet tăng công việc bảo trì, không phù hợp <mark>few maintenance tasks</mark>.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="26 votes." title="">D (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -1451,12 +1451,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> confidential, DataClassification tag, Owner tag, S3</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> Bucket policy conditions can enforce object tag and owner checks, while IAM policy grants baseline access. This enforces per-user access for confidential objects.</p>
+<p><strong>Vì sao đúng:</strong> Keywords <mark>confidential</mark>, <mark>DataClassification tag</mark>, <mark>Owner tag</mark> yêu cầu dùng bucket policy điều kiện theo tag và user để chỉ chủ sở hữu đọc được.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> ACLs are not recommended and do not enforce tag-based ownership checks well.</li>
-<li><strong>C:</strong> aws:RequestTag applies to tagging requests, not object ownership enforcement.</li>
-<li><strong>D:</strong> Authenticated-read ACL is overly permissive and violates confidential access.</li>
+<li><strong>A:</strong> ACL không đủ kiểm soát theo tag và không khuyến nghị.</li>
+<li><strong>C:</strong> aws:RequestTag không áp dụng cho đọc object đã tồn tại.</li>
+<li><strong>D:</strong> Authenticated-read quá rộng, trái với <mark>confidential</mark>.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="11 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -1560,12 +1560,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> CodeDeploy, Lambda, database changes, before traffic</p>
 <p><strong>Đáp án:</strong> A</p>
-<p><strong>Vì sao đúng:</strong> BeforeAllowTraffic runs before routing user traffic to the new Lambda version, allowing a wait for database propagation.</p>
+<p><strong>Vì sao đúng:</strong> Hook <mark>BeforeAllowTraffic</mark> chạy trước khi chuyển traffic tới phiên bản mới, đúng với keyword <mark>before traffic</mark> và chờ <mark>database changes</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> AfterAllowTraffic executes too late; traffic already reaches the new version.</li>
-<li><strong>C:</strong> BeforeInstall is not a supported Lambda lifecycle hook.</li>
-<li><strong>D:</strong> ValidateService checks health but does not delay traffic until DB changes complete.</li>
+<li><strong>B:</strong> AfterAllowTraffic xảy ra sau khi đã nhận traffic.</li>
+<li><strong>C:</strong> BeforeInstall không dùng cho Lambda.</li>
+<li><strong>D:</strong> ValidateService không chủ động chặn traffic để đợi DB cập nhật.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">A (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -1691,12 +1691,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> GitHub, build, test, push to S3, CodeBuild</p>
 <p><strong>Đáp án:</strong> A, B, C</p>
-<p><strong>Vì sao đúng:</strong> CodeBuild needs a buildspec, a project configured with GitHub, and a webhook trigger to run on every commit.</p>
+<p><strong>Vì sao đúng:</strong> Dùng <mark>CodeBuild</mark> với buildspec, cấu hình source GitHub và webhook để tự chạy mỗi lần push rồi đẩy artifact lên S3.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>D:</strong> CodeDeploy is for deployments, not building and uploading artifacts to S3.</li>
-<li><strong>E:</strong> OpsWorks is unrelated to CI builds from GitHub.</li>
-<li><strong>F:</strong> Managing a build EC2 instance is unnecessary compared to CodeBuild.</li>
+<li><strong>D:</strong> CodeDeploy không dùng để build/test.</li>
+<li><strong>E:</strong> OpsWorks không liên quan pipeline GitHub.</li>
+<li><strong>F:</strong> EC2 build thủ công không cần thiết.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 67%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">ABC (67%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 33%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">AB (33%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -1799,12 +1799,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> multiple regions, single product catalog, customer information, compliance</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Aurora read replicas can share the product catalog across Regions with minimal app changes, while separate regional Aurora instances keep customer data local for compliance.</p>
+<p><strong>Vì sao đúng:</strong> Keyword <mark>single product catalog</mark> phù hợp Aurora read replica đa vùng; <mark>customer information</mark> cần lưu riêng từng vùng để đáp ứng <mark>compliance</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Redshift is a data warehouse and would require significant application changes.</li>
-<li><strong>B:</strong> DynamoDB global tables would require reworking data access from Aurora.</li>
-<li><strong>D:</strong> Global tables for customer data violates the requirement to keep data regional.</li>
+<li><strong>A:</strong> Redshift là data warehouse, thay đổi ứng dụng lớn.</li>
+<li><strong>B:</strong> DynamoDB global tables yêu cầu thay đổi data layer từ Aurora.</li>
+<li><strong>D:</strong> Global tables cho dữ liệu khách hàng trái với <mark>compliance</mark>.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="4 votes." title="">C (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -1912,12 +1912,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> vulnerabilities, audit trail, login activities</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Amazon Inspector provides vulnerability findings and CloudWatch Logs captures system/login logs for audit trails.</p>
+<p><strong>Vì sao đúng:</strong> Amazon Inspector xử lý <mark>vulnerabilities</mark>, CloudWatch Logs lưu <mark>audit trail</mark> cho <mark>login activities</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Kinesis Agent does not provide a dedicated audit trail for logins.</li>
-<li><strong>B:</strong> CloudTrail records API calls, not OS login activity.</li>
-<li><strong>C:</strong> CloudWatch and Config do not perform vulnerability assessments.</li>
+<li><strong>A:</strong> Kinesis Agent không tạo audit trail chuẩn.</li>
+<li><strong>B:</strong> CloudTrail chỉ log API, không log đăng nhập OS.</li>
+<li><strong>C:</strong> CloudWatch/Config không quét lỗ hổng.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 71%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="15 votes." title="">D (71%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 29%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">B (29%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -2042,12 +2042,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> S3 cross-region replication, different account, private bucket policy</p>
 <p><strong>Đáp án:</strong> A, D, E</p>
-<p><strong>Vì sao đúng:</strong> CRR needs a replication role in the source account, a replication rule on the source bucket, and permissions on the destination bucket policy.</p>
+<p><strong>Vì sao đúng:</strong> CRR cần role ở source, rule ở source và policy ở destination để cho phép replication cross-account.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> The replication role is created in the source account, not the target.</li>
-<li><strong>C:</strong> Source bucket policy is optional for same-account, but cross-account requires destination policy instead.</li>
-<li><strong>F:</strong> Replication rules are defined only on the source bucket.</li>
+<li><strong>B:</strong> Role replication tạo ở source, không phải target.</li>
+<li><strong>C:</strong> Source bucket policy không đủ cho cross-account; cần target policy.</li>
+<li><strong>F:</strong> Rule chỉ cấu hình ở source bucket.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 73%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="8 votes." title="">ADE (73%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 18%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">BCE (18%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 9%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">9%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -2171,12 +2171,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> managed centrally, logging, metrics, security assessments, weekly patching</p>
 <p><strong>Đáp án:</strong> B, C, F</p>
-<p><strong>Vì sao đúng:</strong> Use Config to ensure instances are managed by Systems Manager, then use SSM to install agents and maintenance windows/Events to schedule patching and Inspector scans.</p>
+<p><strong>Vì sao đúng:</strong> Dùng Config đảm bảo instance được quản lý bởi SSM; SSM cài agent logging/metrics/Inspector; dùng maintenance windows + EventBridge cho <mark>weekly patching</mark> và assessment.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Inspector does not manage instance configuration or enrollment.</li>
-<li><strong>D:</strong> Inspector cannot install or manage SSM or CloudWatch agents.</li>
-<li><strong>E:</strong> CloudWatch agent is not used to schedule Inspector assessments.</li>
+<li><strong>A:</strong> Inspector không quản lý cấu hình instance.</li>
+<li><strong>D:</strong> Inspector không cài đặt SSM/CloudWatch agent.</li>
+<li><strong>E:</strong> CloudWatch agent không lên lịch Inspector.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 89%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="17 votes." title="">BCF (89%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 11%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">11%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -2279,12 +2279,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> pipeline takes too long, Lambda functions, parallel</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> Setting the same runOrder allows CodePipeline to run independent Lambda build/deploy actions in parallel, reducing total time.</p>
+<p><strong>Vì sao đúng:</strong> Keyword <mark>parallel</mark> yêu cầu chạy các action song song bằng runOrder giống nhau để giảm thời gian pipeline.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Network throughput is not the primary bottleneck for sequential actions.</li>
-<li><strong>B:</strong> CodeBuild parallelism is within a build; the pipeline is still sequential.</li>
-<li><strong>D:</strong> VPC builds add complexity and typically slow pipelines.</li>
+<li><strong>A:</strong> Tăng network không giải quyết việc chạy tuần tự.</li>
+<li><strong>B:</strong> Parallel trong CodeBuild không đổi thứ tự pipeline.</li>
+<li><strong>D:</strong> Chạy trong VPC thường chậm hơn.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">C (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -2388,12 +2388,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> licenses, automate, dashboard, 200 server nodes</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> DynamoDB provides atomic updates, easy querying for availability, and works well with Auto Scaling lifecycle hooks.</p>
+<p><strong>Vì sao đúng:</strong> DynamoDB cho phép cấp phát license tự động và truy vấn nhanh để làm <mark>dashboard</mark> trạng thái license.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> CloudFormation mappings are static and not suited for runtime license allocation.</li>
-<li><strong>C:</strong> SQS can distribute licenses but is less suited for inventory queries and dashboards.</li>
-<li><strong>D:</strong> Manual updates do not scale and violate automation requirements.</li>
+<li><strong>A:</strong> Mappings của CloudFormation là tĩnh, không phù hợp <mark>automate</mark> runtime.</li>
+<li><strong>C:</strong> SQS khó truy vấn tồn kho cho <mark>dashboard</mark>.</li>
+<li><strong>D:</strong> Thủ công không đáp ứng <mark>automate</mark>.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="15 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -2501,12 +2501,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> multi-region disaster recovery, least data loss, lowest recovery times, CloudFormation</p>
 <p><strong>Đáp án:</strong> A</p>
-<p><strong>Vì sao đúng:</strong> A warm standby stack with cross-Region RDS read replica and S3 CRR provides low RPO/RTO while reusing the existing CloudFormation template.</p>
+<p><strong>Vì sao đúng:</strong> Warm standby bằng CloudFormation ở region 2 + RDS read replica + S3 CRR đáp ứng <mark>least data loss</mark> và <mark>lowest recovery times</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> Daily snapshots and Glacier replication increase data loss and recovery time.</li>
-<li><strong>C:</strong> Nightly snapshots still have higher RPO than continuous replication.</li>
-<li><strong>D:</strong> Lambda copy of S3 objects is slower and more error-prone than native CRR.</li>
+<li><strong>B:</strong> Snapshot hằng ngày và Glacier tăng RPO/RTO.</li>
+<li><strong>C:</strong> Snapshot nightly không đáp ứng <mark>least data loss</mark>.</li>
+<li><strong>D:</strong> Lambda copy S3 chậm hơn CRR.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">A (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -2610,12 +2610,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> blue/green, ECS, test the green version, rollback</p>
 <p><strong>Đáp án:</strong> C</p>
-<p><strong>Vì sao đúng:</strong> AfterAllowTestTraffic runs after test traffic is shifted but before full cutover; failing the hook triggers automatic rollback.</p>
+<p><strong>Vì sao đúng:</strong> Hook AfterAllowTestTraffic cho phép <mark>test the green version</mark> trước khi cutover; lỗi sẽ tự <mark>rollback</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Build stage tests do not validate the deployed green environment.</li>
-<li><strong>B:</strong> A pipeline stage cannot run inside CodeDeploy lifecycle hooks.</li>
-<li><strong>D:</strong> AfterAllowTraffic is too late because production traffic has already shifted.</li>
+<li><strong>A:</strong> Test ở build stage không kiểm tra môi trường green thực tế.</li>
+<li><strong>B:</strong> Lambda stage trong pipeline không nằm trong lifecycle của CodeDeploy.</li>
+<li><strong>D:</strong> AfterAllowTraffic xảy ra sau khi đã chuyển traffic chính.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 86%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="12 votes." title="">C (86%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 14%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="7%" title="">7%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -2729,12 +2729,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> RPO of 2 hours, RTO of 10 minutes, two Regions</p>
 <p><strong>Đáp án:</strong> B, D</p>
-<p><strong>Vì sao đúng:</strong> Aurora global database provides fast cross-Region replication for low RPO, while multi-Region app with Route 53 failover meets the short RTO.</p>
+<p><strong>Vì sao đúng:</strong> Aurora global database đáp ứng <mark>RPO of 2 hours</mark> nhờ replication nhanh; ứng dụng đa vùng + Route 53 failover đáp ứng <mark>RTO of 10 minutes</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Aurora is regional; the option describes an invalid configuration.</li>
-<li><strong>C:</strong> Multi-master across Regions is not supported and adds complexity.</li>
-<li><strong>E:</strong> Multi-Region Auto Scaling does not provide DNS-level failover.</li>
+<li><strong>A:</strong> Aurora không chạy multi-Region trong một AZ như mô tả.</li>
+<li><strong>C:</strong> Multi-master cross-Region không hỗ trợ.</li>
+<li><strong>E:</strong> Auto Scaling đa vùng không thay thế failover DNS.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="8 votes." title="">BD (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -2849,12 +2849,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> AccessDenied, S3 bucket, IAM role</p>
 <p><strong>Đáp án:</strong> B, D</p>
-<p><strong>Vì sao đúng:</strong> AccessDenied commonly results from restrictive bucket policies or misconfigured IAM role permissions.</p>
+<p><strong>Vì sao đúng:</strong> <mark>AccessDenied</mark> thường do bucket policy sai hoặc <mark>IAM role</mark> không đủ quyền.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Default encryption does not block access for authorized principals.</li>
-<li><strong>C:</strong> Objects in Glacier can still return AccessDenied only if permissions are wrong.</li>
-<li><strong>E:</strong> Versioning does not affect authorization.</li>
+<li><strong>A:</strong> Default encryption không gây AccessDenied nếu quyền đúng.</li>
+<li><strong>C:</strong> Glacier liên quan retrieval, không phải AccessDenied chính.</li>
+<li><strong>E:</strong> Versioning không ảnh hưởng quyền truy cập.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 75%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">BD (75%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">CD (25%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -2968,12 +2968,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> API Gateway latency, on-premises, without introducing additional latency</p>
 <p><strong>Đáp án:</strong> A, C</p>
-<p><strong>Vì sao đúng:</strong> CloudWatch Logs agent collects server-side logs, and X-Ray with the daemon streams segments asynchronously without adding request latency.</p>
+<p><strong>Vì sao đúng:</strong> CloudWatch Logs agent thu thập log server-side, và X-Ray dùng daemon gửi async nên đáp ứng yêu cầu <mark>without introducing additional latency</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> Sending segments directly from the app adds latency.</li>
-<li><strong>D:</strong> Echoing logs through API Gateway increases response time.</li>
-<li><strong>E:</strong> Custom metrics per request add overhead and do not provide trace context.</li>
+<li><strong>B:</strong> Gửi segment trực tiếp từ app tăng latency.</li>
+<li><strong>D:</strong> Gửi log qua API Gateway làm chậm response.</li>
+<li><strong>E:</strong> Custom metrics mỗi request tăng overhead và không có trace.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 71%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="15 votes." title="">AC (71%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 14%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">14%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 15%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -3079,12 +3079,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> specific versions, OS tuning, scalable, auto replace</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> CodeDeploy on EC2 Auto Scaling allows OS-level customization with appspec and supports automated rollouts with self-healing fleets.</p>
+<p><strong>Vì sao đúng:</strong> CodeDeploy + Auto Scaling trên EC2 cho phép cấu hình OS (Tomcat/HAProxy/Varnish) và tự thay thế khi lỗi, đáp ứng <mark>scalable</mark> và <mark>auto replace</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Fargate does not allow OS tuning or custom system packages like HAProxy/Varnish.</li>
-<li><strong>B:</strong> Elastic Beanstalk Tomcat stack does not cover HAProxy/Varnish requirements.</li>
-<li><strong>C:</strong> Worker tier is for background processing, not a web app with custom stack.</li>
+<li><strong>A:</strong> Fargate không cho tùy biến OS, không đáp ứng <mark>OS tuning</mark>.</li>
+<li><strong>B:</strong> Elastic Beanstalk Tomcat không bao gồm HAProxy/Varnish yêu cầu.</li>
+<li><strong>C:</strong> Worker tier không phù hợp ứng dụng web.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 68%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="21 votes." title="">D (68%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 32%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="10 votes." title="">A (32%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -3187,12 +3187,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> CloudFormation, strict tagging, limit to two Regions</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> AWS Service Catalog enforces approved templates, tagging rules, and regional constraints for self-service deployments.</p>
+<p><strong>Vì sao đúng:</strong> AWS Service Catalog áp chính sách tag và giới hạn Region khi triển khai CloudFormation, đúng với <mark>strict tagging</mark> và <mark>limit to two Regions</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Trusted Advisor only reports; it does not enforce policy.</li>
-<li><strong>B:</strong> Drift detection finds changes but does not enforce compliance.</li>
-<li><strong>C:</strong> StackSets alone do not enforce developer usage or policy constraints.</li>
+<li><strong>A:</strong> Trusted Advisor chỉ báo cáo, không áp chính sách.</li>
+<li><strong>B:</strong> Drift detection không kiểm soát triển khai.</li>
+<li><strong>C:</strong> StackSets không tự ép developers tuân thủ tag/Region.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 75%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="21 votes." title="">D (75%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="7 votes." title="">C (25%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -3295,12 +3295,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> QUICKEST detection, latency, Classic Load Balancer</p>
 <p><strong>Đáp án:</strong> A</p>
-<p><strong>Vì sao đúng:</strong> ELB CloudWatch metrics are near real-time and provide the fastest signal for latency anomalies.</p>
+<p><strong>Vì sao đúng:</strong> CloudWatch metrics của ELB là nguồn nhanh nhất để phát hiện <mark>latency</mark>, đáp ứng <mark>QUICKEST detection</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> Access logs have delivery delays and are slower for detection.</li>
-<li><strong>C:</strong> MinimumHealthyHosts is for deployment health, not latency monitoring.</li>
-<li><strong>D:</strong> Metric filters on logs are slower than native ELB metrics.</li>
+<li><strong>B:</strong> Access logs có độ trễ ghi log.</li>
+<li><strong>C:</strong> MinimumHealthyHosts không đo latency.</li>
+<li><strong>D:</strong> Metric filter log chậm hơn metrics gốc của ELB.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 77%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="10 votes." title="">A (77%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 23%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">D (23%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
@@ -3403,12 +3403,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> CodeDeploy issue, monitoring, notifications</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> CloudWatch Events (EventBridge) can trigger Lambda on deployment state changes and publish to SNS for rapid notifications.</p>
+<p><strong>Vì sao đúng:</strong> EventBridge (CloudWatch Events) bắt sự kiện CodeDeploy và Lambda đánh giá, SNS gửi <mark>notifications</mark> nhanh.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Config rules are not intended for real-time deployment monitoring.</li>
-<li><strong>C:</strong> CloudTrail is audit-focused and slower for operational alerts.</li>
-<li><strong>D:</strong> Inspector is unrelated to deployment events.</li>
+<li><strong>A:</strong> AWS Config không dùng để giám sát deploy realtime.</li>
+<li><strong>C:</strong> CloudTrail phù hợp audit hơn monitoring.</li>
+<li><strong>D:</strong> Inspector không liên quan deploy issues.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 80%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="8 votes." title="">B (80%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 10%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">10%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 10%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">10%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -3510,12 +3510,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> CodeCommit, pipeline trigger, master branch</p>
 <p><strong>Đáp án:</strong> A</p>
-<p><strong>Vì sao đúng:</strong> CodePipeline uses a CloudWatch Events rule to trigger on CodeCommit branch updates; missing rule prevents execution.</p>
+<p><strong>Vì sao đúng:</strong> Pipeline trigger từ CodeCommit dựa trên CloudWatch Events; thiếu rule cho <mark>master branch</mark> thì pipeline không chạy.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> Service role permissions would cause failures after trigger, not no trigger.</li>
-<li><strong>C:</strong> Developer permission issues would prevent the push itself.</li>
-<li><strong>D:</strong> CloudWatch Logs are not the primary trigger mechanism for CodeCommit events.</li>
+<li><strong>B:</strong> Thiếu quyền sẽ gây lỗi sau khi trigger, không phải không trigger.</li>
+<li><strong>C:</strong> Nếu không có quyền push thì đã không push được.</li>
+<li><strong>D:</strong> CloudWatch Logs không là cơ chế trigger.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 75%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">A (75%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 13%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">13%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 13%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">13%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -3632,12 +3632,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> CodeDeploy, Skipped status, not deployed</p>
 <p><strong>Đáp án:</strong> A, D</p>
-<p><strong>Vì sao đúng:</strong> Instances must reach the CodeDeploy endpoint and have an instance profile with permissions; otherwise all events are skipped.</p>
+<p><strong>Vì sao đúng:</strong> Nếu instance không truy cập được CodeDeploy endpoint hoặc thiếu instance profile quyền, các sự kiện sẽ <mark>Skipped</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> User permissions do not affect agent execution on instances.</li>
-<li><strong>C:</strong> Unregistered instances would appear as zero targets, not skipped lifecycle events.</li>
-<li><strong>E:</strong> Missing appspec usually causes failure, not a fully skipped deployment.</li>
+<li><strong>B:</strong> Quyền của user trigger không ảnh hưởng agent trên instance.</li>
+<li><strong>C:</strong> Instance chưa register thường không có target, không phải skipped.</li>
+<li><strong>E:</strong> Thiếu appspec sẽ fail, không phải skipped toàn bộ.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 75%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="12 votes." title="">AD (75%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 13%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">13%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 12%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="6%" title="">6%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -3739,12 +3739,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> cross-Region read replica, promote, automate</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> EventBridge can detect RDS failure and Lambda can promote the replica and update a Parameter Store endpoint that the app reads.</p>
+<p><strong>Vì sao đúng:</strong> EventBridge phát hiện lỗi DB và Lambda tự <mark>promote</mark> replica, cập nhật endpoint ở Parameter Store để app tự đọc lại.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Route 53 cannot promote replicas and CloudTrail is not ideal for RDS failover triggers.</li>
-<li><strong>B:</strong> Custom endpoints do not automate promotion or application failover.</li>
-<li><strong>C:</strong> Updating CloudFormation adds delay and is not a direct failover automation.</li>
+<li><strong>A:</strong> Route 53 không tự promote; CloudTrail không phải trigger phù hợp.</li>
+<li><strong>B:</strong> Custom endpoint không tự động failover.</li>
+<li><strong>C:</strong> Cập nhật CloudFormation mất thời gian, không tối ưu <mark>automate</mark>.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 58%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="7 votes." title="">D (58%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 33%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="4 votes." title="">A (33%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 8%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">8%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -3846,12 +3846,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> log aggregation, central account, cost-effective</p>
 <p><strong>Đáp án:</strong> D</p>
-<p><strong>Vì sao đúng:</strong> Central S3 with CloudWatch Logs agents and Athena enables scalable, low-cost analysis with serverless querying and optional Lambda-driven anomaly detection.</p>
+<p><strong>Vì sao đúng:</strong> Thu log bằng CloudWatch Logs agent và gom vào S3 <mark>central account</mark>; dùng Athena là <mark>cost-effective</mark> và phân tích tập trung.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> EMR is costly for routine log analytics.</li>
-<li><strong>B:</strong> Macie is for data classification, not log analysis.</li>
-<li><strong>C:</strong> Pulling logs back on-premises increases complexity and latency.</li>
+<li><strong>A:</strong> EMR tốn chi phí cao.</li>
+<li><strong>B:</strong> Macie không dùng để phân tích log.</li>
+<li><strong>C:</strong> Kéo log về on-prem tăng độ trễ và vận hành.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="4 votes." title="">D (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
@@ -3955,12 +3955,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> CloudWatch Logs, CRITICAL, alert</p>
 <p><strong>Đáp án:</strong> B</p>
-<p><strong>Vì sao đúng:</strong> A metric filter on the CRITICAL log pattern publishes a custom metric that can alarm and notify via SNS.</p>
+<p><strong>Vì sao đúng:</strong> Dùng metric filter trên <mark>CloudWatch Logs</mark> cho keyword <mark>CRITICAL</mark> để tạo metric và alarm gửi <mark>alert</mark> qua SNS.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>A:</strong> Synthetics monitors endpoints, not log severities.</li>
-<li><strong>C:</strong> GuardDuty is not reading the firewall log stream.</li>
-<li><strong>D:</strong> Firewall Manager does not parse CloudWatch Logs for severity.</li>
+<li><strong>A:</strong> Synthetics không đọc log severity.</li>
+<li><strong>C:</strong> GuardDuty không ingest log firewall này.</li>
+<li><strong>D:</strong> Firewall Manager không phân tích CloudWatch Logs.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 80%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="20 votes." title="">B (80%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 16%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="4 votes." title="">C (16%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 4%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">4%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -4062,12 +4062,12 @@ dataLayer.push({
                                         <span class="answer-description">
 <p><strong>Keywords:</strong> minimal disruptions, quickly roll back, API Gateway, canary</p>
 <p><strong>Đáp án:</strong> A</p>
-<p><strong>Vì sao đúng:</strong> API Gateway canary deployments send a small percentage of traffic to the new environment and allow fast rollback with minimal app changes.</p>
+<p><strong>Vì sao đúng:</strong> API Gateway <mark>canary</mark> gửi ít traffic để giảm <mark>minimal disruptions</mark> và cho phép <mark>quickly roll back</mark>.</p>
 <p><strong>Vì sao không chọn đáp án khác:</strong></p>
 <ul>
-<li><strong>B:</strong> DNS cutover is not gradual and rollback can be slow due to caching.</li>
-<li><strong>C:</strong> Routing through the ALB target group changes is more complex than API Gateway canaries.</li>
-<li><strong>D:</strong> Sending all traffic to ALB removes the canary safety net.</li>
+<li><strong>B:</strong> DNS cutover không canary, rollback chậm do cache.</li>
+<li><strong>C:</strong> Routing ở ALB phức tạp hơn, thay đổi nhiều.</li>
+<li><strong>D:</strong> Chuyển toàn bộ traffic không đáp ứng yêu cầu giảm gián đoạn.</li>
 </ul>
 </span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 89%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="8 votes." title="">A (89%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 11%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">11%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
