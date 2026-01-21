@@ -660,7 +660,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company wants to migrate its content sharing web application hosted on Amazon EC2 to a serverless architecture. The company currently deploys changes to its application by creating a new Auto Scaling group of EC2 instances and a new Elastic Load Balancer, and then shifting the traffic away using an Amazon Route<br>53 weighted routing policy.<br>For its new serverless application, the company is planning to use Amazon API Gateway and AWS Lambda. The company will need to update its deployment processes to work with the new application. It will also need to retain the ability to test new features on a small number of users before rolling the features out to the entire user base.<br>Which deployment strategy will meet these requirements?<br>
+                                            A company wants to migrate its content sharing web application hosted on Amazon EC2 to a <mark>serverless</mark> architecture. The company currently deploys changes to its application by creating a new Auto Scaling group of EC2 instances and a new Elastic Load Balancer, and then shifting the traffic away using an Amazon Route<br>53 <mark>weighted routing</mark> policy.<br>For its new <mark>serverless</mark> application, the company is planning to use Amazon <mark>API Gateway</mark> and AWS <mark>Lambda</mark>. The company will need to update its deployment processes to work with the new application. It will also need to retain the ability to <mark>test new features</mark> on a small number of users before rolling the features out to the entire user base.<br>Which deployment strategy will meet these requirements?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -736,8 +736,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> serverless, API Gateway, Lambda, canary, test new features, weighted routing</p>
+<p><strong>Đáp án:</strong> B</p>
+<p><strong>Vì sao đúng:</strong> API Gateway supports canary releases tied to Lambda function versions, which fits the serverless deployment and gradual rollout requirement.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Route 53 failover is for disaster recovery, not controlled canary traffic splitting.</li>
+<li><strong>C:</strong> Elastic Beanstalk blue/green targets EC2-based stacks, not native API Gateway/Lambda serverless deployments.</li>
+<li><strong>D:</strong> OpsWorks is not designed for API Gateway/Lambda deployments and adds unnecessary complexity.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -761,7 +769,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company's application is currently deployed to a single AWS Region. Recently, the company opened a new office on a different continent. The users in the new office are experiencing high latency. The company's application runs on Amazon EC2 instances behind an Application Load Balancer (ALB) and uses Amazon<br>DynamoDB as the database layer. The instances run in an EC2 Auto Scaling group across multiple Availability Zones. A DevOps Engineer is tasked with minimizing application response times and improving availability for users in both Regions.<br>Which combination of actions should be taken to address the latency issues? (Choose three.)<br>
+                                            A company's application is currently deployed to a <mark>single AWS Region</mark>. Recently, the company opened a new office on a <mark>different continent</mark>. The users in the new office are experiencing <mark>high latency</mark>. The company's application runs on Amazon EC2 instances behind an Application Load Balancer (<mark>ALB</mark>) and uses Amazon<br><mark>DynamoDB</mark> as the database layer. The instances run in an EC2 <mark>Auto Scaling</mark> group across multiple Availability Zones. A DevOps Engineer is tasked with minimizing application response times and improving availability for users in <mark>both Regions</mark>.<br>Which combination of actions should be taken to address the latency issues? (Choose three.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -859,8 +867,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> single AWS Region, different continent, high latency, ALB, Auto Scaling, DynamoDB, both Regions</p>
+<p><strong>Đáp án:</strong> C, D, F</p>
+<p><strong>Vì sao đúng:</strong> Create a full stack (ALB + ASG) in the new Region and use Route 53 latency-based routing; DynamoDB global tables provide multi-Region low-latency data access.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Creating a separate table with replication is extra effort and does not provide active-active latency benefits like global tables.</li>
+<li><strong>B:</strong> ALBs and Auto Scaling groups are regional resources and cannot be created as global resources.</li>
+<li><strong>E:</strong> Failover routing is active-passive and does not optimize latency for users in both Regions.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="7 votes." title="">CDF (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -884,7 +900,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps engineer used an AWS CloudFormation custom resource to set up AD Connector. The AWS Lambda function executed and created AD Connector, but<br>CloudFormation is not transitioning from CREATE_IN_PROGRESS to CREATE_COMPLETE.<br>Which action should the engineer take to resolve this issue?<br>
+                                            A DevOps engineer used an AWS <mark>CloudFormation custom resource</mark> to set up AD Connector. The AWS <mark>Lambda function</mark> executed and created AD Connector, but<br>CloudFormation is not transitioning from <mark>CREATE_IN_PROGRESS</mark> to CREATE_COMPLETE.<br>Which action should the engineer take to resolve this issue?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -960,8 +976,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> CloudFormation custom resource, CREATE_IN_PROGRESS, Lambda function</p>
+<p><strong>Đáp án:</strong> B</p>
+<p><strong>Vì sao đúng:</strong> Custom resources must return a response to the pre-signed URL; without it CloudFormation never completes the create step.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> A successful Lambda exit alone is not enough; CloudFormation still needs the explicit response.</li>
+<li><strong>C:</strong> UpdateStack permission is not required for signaling a custom resource completion.</li>
+<li><strong>D:</strong> Directory Service permissions are unrelated to the stuck CloudFormation state.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="5 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -985,7 +1009,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company plans to stop using Amazon EC2 key pairs for SSH access, and instead plans to use AWS Systems Manager Session Manager. To further enhance security, access to Session Manager must take place over a private network only.<br>Which combinations of actions will accomplish this? (Choose two.)<br>
+                                            A company plans to stop using Amazon EC2 key pairs for SSH access, and instead plans to use AWS Systems Manager <mark>Session Manager</mark>. To further enhance security, access to <mark>Session Manager</mark> must take place over a <mark>private network only</mark>.<br>Which combinations of actions will accomplish this? (Choose two.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -1072,8 +1096,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> Session Manager, private network only, VPC endpoint</p>
+<p><strong>Đáp án:</strong> B, C</p>
+<p><strong>Vì sao đúng:</strong> Session Manager requires instance permissions and VPC endpoints to keep traffic private without internet access.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Port 22 is for SSH and is not used by Session Manager.</li>
+<li><strong>D:</strong> A bastion host contradicts the goal of removing SSH access.</li>
+<li><strong>E:</strong> Removing default routes does not enable Session Manager without endpoints.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">BC (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -1097,7 +1129,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company runs an application with an Amazon EC2 and on-premises configuration. A DevOps Engineer needs to standardize patching across both environments. Company policy dictates that patching only happens during non-business hours.<br>Which combination of actions will meet these requirements? (Choose three.)<br>
+                                            A company runs an application with an Amazon EC2 and <mark>on-premises</mark> configuration. A DevOps Engineer needs to <mark>standardize patching</mark> across both environments. Company policy dictates that patching only happens during <mark>non-business hours</mark>.<br>Which combination of actions will meet these requirements? (Choose three.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -1195,8 +1227,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> standardize patching, on-premises, non-business hours, Systems Manager</p>
+<p><strong>Đáp án:</strong> A, B, F</p>
+<p><strong>Vì sao đúng:</strong> Hybrid Activations onboard on-premises servers, EC2 needs an instance role, and Maintenance Windows enforce patching during the approved window.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>C:</strong> Access keys are not required when using Hybrid Activations.</li>
+<li><strong>D:</strong> Hourly automation ignores the non-business-hours requirement.</li>
+<li><strong>E:</strong> CloudWatch Events alone does not provide the managed patch window controls.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">ABF (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -1224,7 +1264,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company has many applications. Different teams in the company developed the applications by using multiple languages and frameworks. The applications run on premises and on different servers with different operating systems. Each team has its own release protocol and process. The company wants to reduce the complexity of the release and maintenance of these applications.<br>The company is migrating its technology stacks, including these applications, to AWS. The company wants centralized control of source code, a consistent and automatic delivery pipeline, and as few maintenance tasks as possible on the underlying infrastructure.<br>What should a DevOps engineer do to meet these requirements?<br>
+                                            A company has many applications. Different teams in the company developed the applications by using multiple languages and frameworks. The applications run on premises and on different servers with different operating systems. Each team has its own release protocol and process. The company wants to reduce the complexity of the release and maintenance of these applications.<br>The company is migrating its technology stacks, including these applications, to AWS. The company wants <mark>centralized control</mark> of source code, a <mark>consistent and automatic delivery pipeline</mark>, and as <mark>few maintenance tasks</mark> as possible on the underlying infrastructure.<br>What should a DevOps engineer do to meet these requirements?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -1300,8 +1340,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> centralized control, consistent and automatic delivery pipeline, few maintenance tasks</p>
+<p><strong>Đáp án:</strong> D</p>
+<p><strong>Vì sao đúng:</strong> Containerizing each app and deploying to ECS on Fargate minimizes infrastructure management while keeping consistent CI/CD per app.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Single repo with branches and a centralized server increases coupling and operational overhead.</li>
+<li><strong>B:</strong> Centralized server deployments still require OS maintenance and do not scale well across stacks.</li>
+<li><strong>C:</strong> Building AMIs and EC2 fleets increases maintenance and slows deployments.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="26 votes." title="">D (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -1325,7 +1373,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps engineer is developing an application for a company. The application needs to persist files to Amazon S3. The application needs to upload files with different security classifications that the company defines. These classifications include confidential, private, and public. Files that have a confidential classification must not be viewable by anyone other than the user who uploaded them. The application uses the IAM role of the user to call the S3 API operations.<br>The DevOps engineer has modified the application to add a DataClassification tag with the value of confidential and an Owner tag with the uploading user's ID to each confidential object that is uploaded to Amazon S3.<br>Which set of additional steps must the DevOps engineer take to meet the company's requirements?<br>
+                                            A DevOps engineer is developing an application for a company. The application needs to persist files to Amazon <mark>S3</mark>. The application needs to upload files with different security classifications that the company defines. These classifications include <mark>confidential</mark>, private, and public. Files that have a <mark>confidential</mark> classification must not be viewable by anyone other than the user who uploaded them. The application uses the IAM role of the user to call the <mark>S3</mark> API operations.<br>The DevOps engineer has modified the application to add a <mark>DataClassification tag</mark> with the value of <mark>confidential</mark> and an <mark>Owner tag</mark> with the uploading user's ID to each <mark>confidential</mark> object that is uploaded to Amazon <mark>S3</mark>.<br>Which set of additional steps must the DevOps engineer take to meet the company's requirements?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -1401,8 +1449,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> confidential, DataClassification tag, Owner tag, S3</p>
+<p><strong>Đáp án:</strong> B</p>
+<p><strong>Vì sao đúng:</strong> Bucket policy conditions can enforce object tag and owner checks, while IAM policy grants baseline access. This enforces per-user access for confidential objects.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> ACLs are not recommended and do not enforce tag-based ownership checks well.</li>
+<li><strong>C:</strong> aws:RequestTag applies to tagging requests, not object ownership enforcement.</li>
+<li><strong>D:</strong> Authenticated-read ACL is overly permissive and violates confidential access.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="11 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -1426,7 +1482,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company has developed an AWS Lambda function that handles orders received through an API. The company is using AWS CodeDeploy to deploy the Lambda function as the final stage of a CI/CD pipeline.<br>A DevOps Engineer has noticed there are intermittent failures of the ordering API for a few seconds after deployment. After some investigation, the DevOps<br>Engineer believes the failures are due to database changes not having fully propagated before the Lambda function begins executing.<br>How should the DevOps Engineer overcome this?<br>
+                                            A company has developed an AWS <mark>Lambda</mark> function that handles orders received through an API. The company is using AWS <mark>CodeDeploy</mark> to deploy the <mark>Lambda</mark> function as the final stage of a CI/CD pipeline.<br>A DevOps Engineer has noticed there are intermittent failures of the ordering API for a few seconds after deployment. After some investigation, the DevOps<br>Engineer believes the failures are due to <mark>database changes</mark> not having fully propagated before the <mark>Lambda</mark> function begins executing.<br>How should the DevOps Engineer overcome this?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -1502,8 +1558,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> CodeDeploy, Lambda, database changes, before traffic</p>
+<p><strong>Đáp án:</strong> A</p>
+<p><strong>Vì sao đúng:</strong> BeforeAllowTraffic runs before routing user traffic to the new Lambda version, allowing a wait for database propagation.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>B:</strong> AfterAllowTraffic executes too late; traffic already reaches the new version.</li>
+<li><strong>C:</strong> BeforeInstall is not a supported Lambda lifecycle hook.</li>
+<li><strong>D:</strong> ValidateService checks health but does not delay traffic until DB changes complete.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">A (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -1527,7 +1591,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A software company wants to automate the build process for a project where the code is stored in GitHub. When the repository is updated, source code should be compiled, tested, and pushed to Amazon S3.<br>Which combination of steps would address these requirements? (Choose three.)<br>
+                                            A software company wants to automate the <mark>build</mark> process for a project where the code is stored in <mark>GitHub</mark>. When the repository is updated, source code should be compiled, <mark>test</mark>ed, and pushed to Amazon S3.<br>Which combination of steps would address these requirements? (Choose three.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -1625,8 +1689,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> GitHub, build, test, push to S3, CodeBuild</p>
+<p><strong>Đáp án:</strong> A, B, C</p>
+<p><strong>Vì sao đúng:</strong> CodeBuild needs a buildspec, a project configured with GitHub, and a webhook trigger to run on every commit.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>D:</strong> CodeDeploy is for deployments, not building and uploading artifacts to S3.</li>
+<li><strong>E:</strong> OpsWorks is unrelated to CI builds from GitHub.</li>
+<li><strong>F:</strong> Managing a build EC2 instance is unnecessary compared to CodeBuild.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 67%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">ABC (67%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 33%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">AB (33%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
@@ -1649,7 +1721,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            An online retail company based in the United States plans to expand its operations to Europe and Asia in the next six months. Its product currently runs on<br>Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. All data is stored in an Amazon Aurora database instance.<br>When the product is deployed in multiple regions, the company wants a single product catalog across all regions, but for compliance purposes, its customer information and purchases must be kept in each region.<br>How should the company meet these requirements with the LEAST amount of application changes?<br>
+                                            An online retail company based in the United States plans to expand its operations to Europe and Asia in the next six months. Its product currently runs on<br>Amazon EC2 instances behind an Application Load Balancer. The instances run in an Amazon EC2 Auto Scaling group across multiple Availability Zones. All data is stored in an Amazon Aurora database instance.<br>When the product is deployed in <mark>multiple regions</mark>, the company wants a <mark>single product catalog</mark> across all regions, but for <mark>compliance</mark> purposes, its <mark>customer information</mark> and purchases must be kept in each region.<br>How should the company meet these requirements with the LEAST amount of application changes?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -1725,8 +1797,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> multiple regions, single product catalog, customer information, compliance</p>
+<p><strong>Đáp án:</strong> C</p>
+<p><strong>Vì sao đúng:</strong> Aurora read replicas can share the product catalog across Regions with minimal app changes, while separate regional Aurora instances keep customer data local for compliance.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Redshift is a data warehouse and would require significant application changes.</li>
+<li><strong>B:</strong> DynamoDB global tables would require reworking data access from Aurora.</li>
+<li><strong>D:</strong> Global tables for customer data violates the requirement to keep data regional.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="4 votes." title="">C (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -1754,7 +1834,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company wants to ensure that their EC2 instances are secure. They want to be notified if any new vulnerabilities are discovered on their instances, and they also want an audit trail of all login activities on the instances.<br>Which solution will meet these requirements?<br>
+                                            A company wants to ensure that their EC2 instances are secure. They want to be notified if any new <mark>vulnerabilities</mark> are discovered on their instances, and they also want an <mark>audit trail</mark> of all <mark>login activities</mark> on the instances.<br>Which solution will meet these requirements?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -1830,8 +1910,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> vulnerabilities, audit trail, login activities</p>
+<p><strong>Đáp án:</strong> D</p>
+<p><strong>Vì sao đúng:</strong> Amazon Inspector provides vulnerability findings and CloudWatch Logs captures system/login logs for audit trails.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Kinesis Agent does not provide a dedicated audit trail for logins.</li>
+<li><strong>B:</strong> CloudTrail records API calls, not OS login activity.</li>
+<li><strong>C:</strong> CloudWatch and Config do not perform vulnerability assessments.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 71%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="15 votes." title="">D (71%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 29%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">B (29%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
@@ -1854,7 +1942,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps Engineer needs to back up sensitive Amazon S3 objects that are stored within an S3 bucket with a private bucket policy using the S3 cross-region replication functionality. The objects need to be copied to a target bucket in a different AWS Region and account.<br>Which actions should be performed to enable this replication? (Choose three.)<br>
+                                            A DevOps Engineer needs to back up sensitive Amazon S3 objects that are stored within an S3 bucket with a <mark>private bucket policy</mark> using the <mark>S3 cross-region replication</mark> functionality. The objects need to be copied to a target bucket in a different AWS Region and account.<br>Which actions should be performed to enable this replication? (Choose three.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -1952,8 +2040,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> S3 cross-region replication, different account, private bucket policy</p>
+<p><strong>Đáp án:</strong> A, D, E</p>
+<p><strong>Vì sao đúng:</strong> CRR needs a replication role in the source account, a replication rule on the source bucket, and permissions on the destination bucket policy.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>B:</strong> The replication role is created in the source account, not the target.</li>
+<li><strong>C:</strong> Source bucket policy is optional for same-account, but cross-account requires destination policy instead.</li>
+<li><strong>F:</strong> Replication rules are defined only on the source bucket.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 73%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="8 votes." title="">ADE (73%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 18%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">BCE (18%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 9%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">9%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
 <!-- exam-view412 -->
@@ -1975,7 +2071,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company is using Amazon EC2 for various workloads. Company policy requires that instances be managed centrally to standardize configurations. These configurations include standard logging, metrics, security assessments, and weekly patching.<br>How can the company meet these requirements? (Choose three.)<br>
+                                            A company is using Amazon EC2 for various workloads. Company policy requires that instances be <mark>managed centrally</mark> to standardize configurations. These configurations include standard <mark>logging</mark>, <mark>metrics</mark>, <mark>security assessments</mark>, and <mark>weekly patching</mark>.<br>How can the company meet these requirements? (Choose three.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -2073,8 +2169,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> managed centrally, logging, metrics, security assessments, weekly patching</p>
+<p><strong>Đáp án:</strong> B, C, F</p>
+<p><strong>Vì sao đúng:</strong> Use Config to ensure instances are managed by Systems Manager, then use SSM to install agents and maintenance windows/Events to schedule patching and Inspector scans.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Inspector does not manage instance configuration or enrollment.</li>
+<li><strong>D:</strong> Inspector cannot install or manage SSM or CloudWatch agents.</li>
+<li><strong>E:</strong> CloudWatch agent is not used to schedule Inspector assessments.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 89%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="17 votes." title="">BCF (89%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 11%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">11%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
@@ -2097,7 +2201,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A business has an application that consists of five independent AWS Lambda functions.<br>The DevOps Engineer has built a CI/CD pipeline using AWS CodePipeline and AWS CodeBuild that builds, tests, packages, and deploys each Lambda function in sequence. The pipeline uses an Amazon CloudWatch Events rule to ensure the pipeline execution starts as quickly as possible after a change is made to the application source code.<br>After working with the pipeline for a few months, the DevOps Engineer has noticed the pipeline takes too long to complete.<br>What should the DevOps Engineer implement to BEST improve the speed of the pipeline?<br>
+                                            A business has an application that consists of five independent AWS <mark>Lambda functions</mark>.<br>The DevOps Engineer has built a CI/CD pipeline using AWS CodePipeline and AWS CodeBuild that builds, tests, packages, and deploys each Lambda function in sequence. The pipeline uses an Amazon CloudWatch Events rule to ensure the pipeline execution starts as quickly as possible after a change is made to the application source code.<br>After working with the pipeline for a few months, the DevOps Engineer has noticed the <mark>pipeline takes too long</mark> to complete.<br>What should the DevOps Engineer implement to BEST improve the speed of the pipeline?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -2173,8 +2277,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> pipeline takes too long, Lambda functions, parallel</p>
+<p><strong>Đáp án:</strong> C</p>
+<p><strong>Vì sao đúng:</strong> Setting the same runOrder allows CodePipeline to run independent Lambda build/deploy actions in parallel, reducing total time.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Network throughput is not the primary bottleneck for sequential actions.</li>
+<li><strong>B:</strong> CodeBuild parallelism is within a build; the pipeline is still sequential.</li>
+<li><strong>D:</strong> VPC builds add complexity and typically slow pipelines.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">C (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -2198,7 +2310,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company is creating a software solution that executes a specific parallel-processing mechanism. The software can scale to tens of servers in some special scenarios. This solution uses a proprietary library that is license-based, requiring that each individual server have a single, dedicated license installed. The company has 200 licenses and is planning to run 200 server nodes concurrently at most.<br>The company has requested the following features:<br>✑ A mechanism to automate the use of the licenses at scale.<br>✑ Creation of a dashboard to use in the future to verify which licenses are available at any moment.<br>What is the MOST effective way to accomplish these requirements?<br>
+                                            A company is creating a software solution that executes a specific parallel-processing mechanism. The software can scale to tens of servers in some special scenarios. This solution uses a proprietary library that is license-based, requiring that each individual server have a single, dedicated license installed. The company has 200 <mark>licenses</mark> and is planning to run <mark>200 server nodes</mark> concurrently at most.<br>The company has requested the following features:<br>✑ A mechanism to <mark>automate</mark> the use of the <mark>licenses</mark> at scale.<br>✑ Creation of a <mark>dashboard</mark> to use in the future to verify which <mark>licenses</mark> are available at any moment.<br>What is the MOST effective way to accomplish these requirements?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -2274,8 +2386,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> licenses, automate, dashboard, 200 server nodes</p>
+<p><strong>Đáp án:</strong> B</p>
+<p><strong>Vì sao đúng:</strong> DynamoDB provides atomic updates, easy querying for availability, and works well with Auto Scaling lifecycle hooks.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> CloudFormation mappings are static and not suited for runtime license allocation.</li>
+<li><strong>C:</strong> SQS can distribute licenses but is less suited for inventory queries and dashboards.</li>
+<li><strong>D:</strong> Manual updates do not scale and violate automation requirements.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="15 votes." title="">B (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -2303,7 +2423,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps Engineer administers an application that manages video files for a video production company. The application runs on Amazon EC2 instances behind an ELB Application Load Balancer. The instances run in an Auto Scaling group across multiple Availability Zones. Data is stored in an Amazon RDS PostgreSQL<br>Multi-AZ DB instance, and the video files are stored in an Amazon S3 bucket. On a typical day, 50 GB of new video are added to the S3 bucket. The Engineer must implement a multi-region disaster recovery plan with the least data loss and the lowest recovery times. The current application infrastructure is already described using AWS CloudFormation.<br>Which deployment option should the Engineer choose to meet the uptime and recovery objectives for the system?<br>
+                                            A DevOps Engineer administers an application that manages video files for a video production company. The application runs on Amazon EC2 instances behind an ELB Application Load Balancer. The instances run in an Auto Scaling group across multiple Availability Zones. Data is stored in an Amazon RDS PostgreSQL<br>Multi-AZ DB instance, and the video files are stored in an Amazon S3 bucket. On a typical day, 50 GB of new video are added to the S3 bucket. The Engineer must implement a <mark>multi-region disaster recovery</mark> plan with the <mark>least data loss</mark> and the <mark>lowest recovery times</mark>. The current application infrastructure is already described using AWS <mark>CloudFormation</mark>.<br>Which deployment option should the Engineer choose to meet the uptime and recovery objectives for the system?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -2379,8 +2499,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> multi-region disaster recovery, least data loss, lowest recovery times, CloudFormation</p>
+<p><strong>Đáp án:</strong> A</p>
+<p><strong>Vì sao đúng:</strong> A warm standby stack with cross-Region RDS read replica and S3 CRR provides low RPO/RTO while reusing the existing CloudFormation template.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>B:</strong> Daily snapshots and Glacier replication increase data loss and recovery time.</li>
+<li><strong>C:</strong> Nightly snapshots still have higher RPO than continuous replication.</li>
+<li><strong>D:</strong> Lambda copy of S3 objects is slower and more error-prone than native CRR.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">A (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -2404,7 +2532,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company is using AWS CodePipeline to automate its release pipeline. AWS CodeDeploy is being used in the pipeline to deploy an application to Amazon ECS using the blue/green deployment model. The company wants to implement scripts to test the green version of the application before shifting traffic. These scripts will complete in 5 minutes or less. If errors are discovered during these tests, the application must be rolled back.<br>Which strategy will meet these requirements?<br>
+                                            A company is using AWS CodePipeline to automate its release pipeline. AWS CodeDeploy is being used in the pipeline to deploy an application to Amazon <mark>ECS</mark> using the <mark>blue/green</mark> deployment model. The company wants to implement scripts to <mark>test the green version</mark> of the application before shifting traffic. These scripts will complete in 5 minutes or less. If errors are discovered during these tests, the application must be rolled back.<br>Which strategy will meet these requirements?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -2480,8 +2608,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> blue/green, ECS, test the green version, rollback</p>
+<p><strong>Đáp án:</strong> C</p>
+<p><strong>Vì sao đúng:</strong> AfterAllowTestTraffic runs after test traffic is shifted but before full cutover; failing the hook triggers automatic rollback.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Build stage tests do not validate the deployed green environment.</li>
+<li><strong>B:</strong> A pipeline stage cannot run inside CodeDeploy lifecycle hooks.</li>
+<li><strong>D:</strong> AfterAllowTraffic is too late because production traffic has already shifted.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 86%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="12 votes." title="">C (86%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 14%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="7%" title="">7%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
@@ -2504,7 +2640,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company requires an RPO of 2 hours and an RTO of 10 minutes for its data and application at all times. An application uses a MySQL database and Amazon<br>EC2 web servers. The development team needs a strategy for failover and disaster recovery.<br>Which combination of deployment strategies will meet these requirements? (Choose two.)<br>
+                                            A company requires an <mark>RPO of 2 hours</mark> and an <mark>RTO of 10 minutes</mark> for its data and application at all times. An application uses a MySQL database and Amazon<br>EC2 web servers. The development team needs a strategy for failover and disaster recovery.<br>Which combination of deployment strategies will meet these requirements? (Choose two.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -2591,8 +2727,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> RPO of 2 hours, RTO of 10 minutes, two Regions</p>
+<p><strong>Đáp án:</strong> B, D</p>
+<p><strong>Vì sao đúng:</strong> Aurora global database provides fast cross-Region replication for low RPO, while multi-Region app with Route 53 failover meets the short RTO.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Aurora is regional; the option describes an invalid configuration.</li>
+<li><strong>C:</strong> Multi-master across Regions is not supported and adds complexity.</li>
+<li><strong>E:</strong> Multi-Region Auto Scaling does not provide DNS-level failover.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="8 votes." title="">BD (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -2616,7 +2760,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            An Amazon EC2 instance is running in a Virtual Private Cloud (VPC) and needs to download an object from a restricted Amazon S3 bucket. When the DevOps engineer tries to download, the object an AccessDenied error is received.<br>What are the possible causes for this error? (Choose two.)<br>
+                                            An Amazon EC2 instance is running in a Virtual Private Cloud (VPC) and needs to download an object from a restricted Amazon <mark>S3 bucket</mark>. When the DevOps engineer tries to download, the object an <mark>AccessDenied</mark> error is received.<br>What are the possible causes for this error? (Choose two.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -2703,8 +2847,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> AccessDenied, S3 bucket, IAM role</p>
+<p><strong>Đáp án:</strong> B, D</p>
+<p><strong>Vì sao đúng:</strong> AccessDenied commonly results from restrictive bucket policies or misconfigured IAM role permissions.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Default encryption does not block access for authorized principals.</li>
+<li><strong>C:</strong> Objects in Glacier can still return AccessDenied only if permissions are wrong.</li>
+<li><strong>E:</strong> Versioning does not affect authorization.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 75%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">BD (75%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">CD (25%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
@@ -2727,7 +2879,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps team manages an API running on-premises that serves as a backend for an Amazon API Gateway endpoint. Customers have been complaining about high response latencies, which the development team has verified using the API Gateway latency metrics in Amazon CloudWatch. To identify the cause, the team needs to collect relevant data without introducing additional latency.<br>Which actions should be taken to accomplish this? (Choose two.)<br>
+                                            A DevOps team manages an API running <mark>on-premises</mark> that serves as a backend for an Amazon API Gateway endpoint. Customers have been complaining about high response latencies, which the development team has verified using the <mark>API Gateway latency</mark> metrics in Amazon CloudWatch. To identify the cause, the team needs to collect relevant data <mark>without introducing additional latency</mark>.<br>Which actions should be taken to accomplish this? (Choose two.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -2814,8 +2966,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> API Gateway latency, on-premises, without introducing additional latency</p>
+<p><strong>Đáp án:</strong> A, C</p>
+<p><strong>Vì sao đúng:</strong> CloudWatch Logs agent collects server-side logs, and X-Ray with the daemon streams segments asynchronously without adding request latency.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>B:</strong> Sending segments directly from the app adds latency.</li>
+<li><strong>D:</strong> Echoing logs through API Gateway increases response time.</li>
+<li><strong>E:</strong> Custom metrics per request add overhead and do not provide trace context.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 71%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="15 votes." title="">AC (71%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 14%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">14%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 15%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
 <!-- exam-view412 -->
@@ -2841,7 +3001,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps engineer wants to find a solution to migrate an application from on premises to AWS. The application is running on Linux and needs to run on specific versions of Apache Tomcat, HAProxy, and Varnish Cache to function properly. The application's operating system-level parameters require tuning. The solution must include a way to automate the deployment of new application versions. The infrastructure should be scalable and faulty servers should be replaced automatically.<br>Which solution should the DevOps engineer use?<br>
+                                            A DevOps engineer wants to find a solution to migrate an application from on premises to AWS. The application is running on Linux and needs to run on <mark>specific versions</mark> of Apache Tomcat, HAProxy, and Varnish Cache to function properly. The application's operating system-level parameters require tuning. The solution must include a way to automate the deployment of new application versions. The infrastructure should be <mark>scalable</mark> and faulty servers should be replaced automatically.<br>Which solution should the DevOps engineer use?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -2917,8 +3077,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> specific versions, OS tuning, scalable, auto replace</p>
+<p><strong>Đáp án:</strong> D</p>
+<p><strong>Vì sao đúng:</strong> CodeDeploy on EC2 Auto Scaling allows OS-level customization with appspec and supports automated rollouts with self-healing fleets.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Fargate does not allow OS tuning or custom system packages like HAProxy/Varnish.</li>
+<li><strong>B:</strong> Elastic Beanstalk Tomcat stack does not cover HAProxy/Varnish requirements.</li>
+<li><strong>C:</strong> Worker tier is for background processing, not a web app with custom stack.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 68%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="21 votes." title="">D (68%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 32%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="10 votes." title="">A (32%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
@@ -2941,7 +3109,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company wants to use AWS CloudFormation for infrastructure deployment. The company has strict tagging and resource requirements and wants to limit the deployment to two Regions. Developers will need to deploy multiple versions of the same application.<br>Which solution ensures resources are deployed in accordance with company policy?<br>
+                                            A company wants to use AWS <mark>CloudFormation</mark> for infrastructure deployment. The company has <mark>strict tagging</mark> and resource requirements and wants to limit the deployment to two Regions. Developers will need to deploy multiple versions of the same application.<br>Which solution ensures resources are deployed in accordance with company policy?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -3017,8 +3185,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> CloudFormation, strict tagging, limit to two Regions</p>
+<p><strong>Đáp án:</strong> D</p>
+<p><strong>Vì sao đúng:</strong> AWS Service Catalog enforces approved templates, tagging rules, and regional constraints for self-service deployments.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Trusted Advisor only reports; it does not enforce policy.</li>
+<li><strong>B:</strong> Drift detection finds changes but does not enforce compliance.</li>
+<li><strong>C:</strong> StackSets alone do not enforce developer usage or policy constraints.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 75%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="21 votes." title="">D (75%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="7 votes." title="">C (25%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
@@ -3041,7 +3217,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps Engineer must track the health of a stateless RESTful service sitting behind a Classic Load Balancer. The deployment of new application revisions is through a CI/CD pipeline. If the service's latency increases beyond a defined threshold, deployment should be stopped until the service has recovered.<br>Which of the following methods allow for the QUICKEST detection time?<br>
+                                            A DevOps Engineer must track the health of a stateless RESTful service sitting behind a <mark>Classic Load Balancer</mark>. The deployment of new application revisions is through a CI/CD pipeline. If the service's <mark>latency</mark> increases beyond a defined threshold, deployment should be stopped until the service has recovered.<br>Which of the following methods allow for the <mark>QUICKEST detection</mark> time?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -3117,8 +3293,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> QUICKEST detection, latency, Classic Load Balancer</p>
+<p><strong>Đáp án:</strong> A</p>
+<p><strong>Vì sao đúng:</strong> ELB CloudWatch metrics are near real-time and provide the fastest signal for latency anomalies.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>B:</strong> Access logs have delivery delays and are slower for detection.</li>
+<li><strong>C:</strong> MinimumHealthyHosts is for deployment health, not latency monitoring.</li>
+<li><strong>D:</strong> Metric filters on logs are slower than native ELB metrics.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 77%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="10 votes." title="">A (77%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 23%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="3 votes." title="">D (23%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
@@ -3141,7 +3325,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            An AWS CodePipeline pipeline has implemented a code release process. The pipeline is integrated with AWS CodeDeploy to deploy versions of an application to multiple Amazon EC2 instances for each CodePipeline stage.<br>During a recent deployment, the pipeline failed due to a CodeDeploy issue. The DevOps team wants to improve monitoring and notifications during deployment to decrease resolution times.<br>What should the DevOps Engineer do to create notifications when issues are discovered?<br>
+                                            An AWS CodePipeline pipeline has implemented a code release process. The pipeline is integrated with AWS CodeDeploy to deploy versions of an application to multiple Amazon EC2 instances for each CodePipeline stage.<br>During a recent deployment, the pipeline failed due to a <mark>CodeDeploy issue</mark>. The DevOps team wants to improve <mark>monitoring</mark> and <mark>notifications</mark> during deployment to decrease resolution times.<br>What should the DevOps Engineer do to create <mark>notifications</mark> when issues are discovered?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -3217,8 +3401,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> CodeDeploy issue, monitoring, notifications</p>
+<p><strong>Đáp án:</strong> B</p>
+<p><strong>Vì sao đúng:</strong> CloudWatch Events (EventBridge) can trigger Lambda on deployment state changes and publish to SNS for rapid notifications.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Config rules are not intended for real-time deployment monitoring.</li>
+<li><strong>C:</strong> CloudTrail is audit-focused and slower for operational alerts.</li>
+<li><strong>D:</strong> Inspector is unrelated to deployment events.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 80%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="8 votes." title="">B (80%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 10%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">10%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 10%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">10%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
 <!-- exam-view412 -->
@@ -3240,7 +3432,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A development team is using AWS CodeCommit to version control application code and AWS CodePipeline to orchestrate software deployments. The team has decided to use a remote master branch as the trigger for the pipeline to integrate code changes. A developer has pushed code changes to the CodeCommit repository, but noticed that the pipeline had no reaction, even after 10 minutes.<br>Which of the following actions should be taken to troubleshoot this issue?<br>
+                                            A development team is using AWS <mark>CodeCommit</mark> to version control application code and AWS CodePipeline to orchestrate software deployments. The team has decided to use a remote <mark>master branch</mark> as the trigger for the pipeline to integrate code changes. A developer has pushed code changes to the <mark>CodeCommit</mark> repository, but noticed that the pipeline had no reaction, even after 10 minutes.<br>Which of the following actions should be taken to troubleshoot this issue?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -3316,8 +3508,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> CodeCommit, pipeline trigger, master branch</p>
+<p><strong>Đáp án:</strong> A</p>
+<p><strong>Vì sao đúng:</strong> CodePipeline uses a CloudWatch Events rule to trigger on CodeCommit branch updates; missing rule prevents execution.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>B:</strong> Service role permissions would cause failures after trigger, not no trigger.</li>
+<li><strong>C:</strong> Developer permission issues would prevent the push itself.</li>
+<li><strong>D:</strong> CloudWatch Logs are not the primary trigger mechanism for CodeCommit events.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 75%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="6 votes." title="">A (75%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 13%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">13%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 13%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">13%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
 <!-- exam-view412 -->
@@ -3343,7 +3543,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A DevOps engineer is deploying a new version of a company's application in an AWS CodeDeploy deployment group associated with its Amazon EC2 instances.<br>After some time, the deployment fails. The engineer realizes that all the events associated with the specific deployment ID are in a Skipped status, and code was not deployed in the instances associated with the deployment group.<br>What are valid reasons for this failure? (Choose two.)<br>
+                                            A DevOps engineer is deploying a new version of a company's application in an AWS <mark>CodeDeploy</mark> deployment group associated with its Amazon EC2 instances.<br>After some time, the deployment fails. The engineer realizes that all the events associated with the specific deployment ID are in a <mark>Skipped status</mark>, and code was <mark>not deployed</mark> in the instances associated with the deployment group.<br>What are valid reasons for this failure? (Choose two.)<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -3430,8 +3630,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> CodeDeploy, Skipped status, not deployed</p>
+<p><strong>Đáp án:</strong> A, D</p>
+<p><strong>Vì sao đúng:</strong> Instances must reach the CodeDeploy endpoint and have an instance profile with permissions; otherwise all events are skipped.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>B:</strong> User permissions do not affect agent execution on instances.</li>
+<li><strong>C:</strong> Unregistered instances would appear as zero targets, not skipped lifecycle events.</li>
+<li><strong>E:</strong> Missing appspec usually causes failure, not a fully skipped deployment.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 75%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="12 votes." title="">AD (75%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 13%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="2 votes." title="">13%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 12%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="6%" title="">6%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
 <!-- exam-view412 -->
@@ -3453,7 +3661,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company has an application that is using a MySQL-compatible Amazon Aurora Multi-AZ DB cluster as the database. A cross-Region read replica has been created for disaster recovery purposes. A DevOps engineer wants to automate the promotion of the replica so it becomes the primary database instance in the event of a failure.<br>Which solution will accomplish this?<br>
+                                            A company has an application that is using a MySQL-compatible Amazon Aurora Multi-AZ DB cluster as the database. A <mark>cross-Region read replica</mark> has been created for disaster recovery purposes. A DevOps engineer wants to <mark>automate</mark> the promotion of the replica so it becomes the primary database instance in the event of a failure.<br>Which solution will accomplish this?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -3529,8 +3737,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> cross-Region read replica, promote, automate</p>
+<p><strong>Đáp án:</strong> D</p>
+<p><strong>Vì sao đúng:</strong> EventBridge can detect RDS failure and Lambda can promote the replica and update a Parameter Store endpoint that the app reads.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Route 53 cannot promote replicas and CloudTrail is not ideal for RDS failover triggers.</li>
+<li><strong>B:</strong> Custom endpoints do not automate promotion or application failover.</li>
+<li><strong>C:</strong> Updating CloudFormation adds delay and is not a direct failover automation.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 58%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="7 votes." title="">D (58%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 33%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="4 votes." title="">A (33%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 8%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">8%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
 <!-- exam-view412 -->
@@ -3552,7 +3768,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            An application has microservices spread across different AWS accounts and is integrated with an on-premises legacy system for some of its functionality.<br>Because of the segmented architecture and missing logs, every time the application experiences issues, it is taking too long to gather the logs to identify the issues. A DevOps Engineer must fix the log aggregation process and provide a way to centrally analyze the logs.<br>Which is the MOST efficient and cost-effective solution?<br>
+                                            An application has microservices spread across different AWS accounts and is integrated with an on-premises legacy system for some of its functionality.<br>Because of the segmented architecture and missing logs, every time the application experiences issues, it is taking too long to gather the logs to identify the issues. A DevOps Engineer must fix the <mark>log aggregation</mark> process and provide a way to centrally analyze the logs.<br>Which is the MOST efficient and <mark>cost-effective</mark> solution?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -3628,8 +3844,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> log aggregation, central account, cost-effective</p>
+<p><strong>Đáp án:</strong> D</p>
+<p><strong>Vì sao đúng:</strong> Central S3 with CloudWatch Logs agents and Athena enables scalable, low-cost analysis with serverless querying and optional Lambda-driven anomaly detection.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> EMR is costly for routine log analytics.</li>
+<li><strong>B:</strong> Macie is for data classification, not log analysis.</li>
+<li><strong>C:</strong> Pulling logs back on-premises increases complexity and latency.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 100%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="4 votes." title="">D (100%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">C (25%)
                 </div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
@@ -3653,7 +3877,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company's DevOps engineer is working in a multi-account environment. The company uses AWS Transit Gateway to route all outbound traffic through a network operations account. In the network operations account, all account traffic passes through a firewall appliance for inspection before the traffic goes to an internet gateway.<br>The firewall appliance sends logs to Amazon CloudWatch Logs and includes event severities of CRITICAL, HIGH, MEDIUM, LOW, and INFO. The security team wants to receive an alert if any CRITICAL events occur.<br>What should the DevOps engineer do to meet these requirements?<br>
+                                            A company's DevOps engineer is working in a multi-account environment. The company uses AWS Transit Gateway to route all outbound traffic through a network operations account. In the network operations account, all account traffic passes through a firewall appliance for inspection before the traffic goes to an internet gateway.<br>The firewall appliance sends logs to Amazon <mark>CloudWatch Logs</mark> and includes event severities of <mark>CRITICAL</mark>, HIGH, MEDIUM, LOW, and INFO. The security team wants to receive an <mark>alert</mark> if any <mark>CRITICAL</mark> events occur.<br>What should the DevOps engineer do to meet these requirements?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -3729,8 +3953,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> CloudWatch Logs, CRITICAL, alert</p>
+<p><strong>Đáp án:</strong> B</p>
+<p><strong>Vì sao đúng:</strong> A metric filter on the CRITICAL log pattern publishes a custom metric that can alarm and notify via SNS.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>A:</strong> Synthetics monitors endpoints, not log severities.</li>
+<li><strong>C:</strong> GuardDuty is not reading the firewall log stream.</li>
+<li><strong>D:</strong> Firewall Manager does not parse CloudWatch Logs for severity.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 80%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="20 votes." title="">B (80%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 16%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="4 votes." title="">C (16%)</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 4%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">4%</div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
 <!-- exam-view412 -->
@@ -3752,7 +3984,7 @@ dataLayer.push({
                                     <p class="card-text">
                                         
                                         
-                                            A company recently migrated its legacy application from on-premises to AWS. The application is hosted on Amazon EC2 instances behind an Application Load<br>Balancer, which is behind Amazon API Gateway. The company wants to ensure users experience minimal disruptions during any deployment of a new version of the application. The company also wants to ensure it can quickly roll back updates if there is an issue.<br>Which solution will meet these requirements with MINIMAL changes to the application?<br>
+                                            A company recently migrated its legacy application from on-premises to AWS. The application is hosted on Amazon EC2 instances behind an Application Load<br>Balancer, which is behind Amazon <mark>API Gateway</mark>. The company wants to ensure users experience <mark>minimal disruptions</mark> during any deployment of a new version of the application. The company also wants to ensure it can <mark>quickly roll back</mark> updates if there is an issue.<br>Which solution will meet these requirements with MINIMAL changes to the application?<br>
                                         
                                     </p>
 <!-- exam-view49 -->
@@ -3828,8 +4060,16 @@ dataLayer.push({
                                         </span>
 
                                         <span class="answer-description">
-                                            
-                                        </span>
+<p><strong>Keywords:</strong> minimal disruptions, quickly roll back, API Gateway, canary</p>
+<p><strong>Đáp án:</strong> A</p>
+<p><strong>Vì sao đúng:</strong> API Gateway canary deployments send a small percentage of traffic to the new environment and allow fast rollback with minimal app changes.</p>
+<p><strong>Vì sao không chọn đáp án khác:</strong></p>
+<ul>
+<li><strong>B:</strong> DNS cutover is not gradual and rollback can be slow due to caching.</li>
+<li><strong>C:</strong> Routing through the ALB target group changes is more complex than API Gateway canaries.</li>
+<li><strong>D:</strong> Sending all traffic to ALB removes the canary safety net.</li>
+</ul>
+</span>
                                     </p><div class="voting-summary col-12 col-sm-6 col-lg-4 pt-2 pb-2" style="font-size: 0.9em"><i>Community vote distribution</i><!-- Additional optional vote button: <a href="javascript:void(0)" data-toggle="tooltip" class="vote-answer-button" title="Vote an answer">🗳️</a>--><div class="progress vote-distribution-bar"><div class="vote-bar progress-bar bg-primary" data-toggle="tooltip" role="progressbar" style="width: 89%; display: flex;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" data-original-title="8 votes." title="">A (89%)</div><div class="vote-bar progress-bar bg-info" data-toggle="tooltip" role="progressbar" style="width: 11%; display: flex;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="1 votes." title="">11%</div><div class="vote-bar progress-bar bg-success" data-toggle="tooltip" role="progressbar" style="width: 25%; display: none;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">B (20%)
                 </div><div class="vote-bar progress-bar bg-warning" data-toggle="tooltip" role="progressbar" style="width: 15%; display: none;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" data-original-title="" title="">Other
                 </div></div></div><p></p>
